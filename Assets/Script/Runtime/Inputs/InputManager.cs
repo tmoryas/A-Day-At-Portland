@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour, IInputManager
     private void Update()
     {
         portToCharaIDs = GetActiveChara();
-        foreach (int i in portToCharaIDs) UnityEngine.Debug.Log(i);
+        //foreach (int i in portToCharaIDs) UnityEngine.Debug.Log(i);
     }
 
     private List<int> GetActiveChara()

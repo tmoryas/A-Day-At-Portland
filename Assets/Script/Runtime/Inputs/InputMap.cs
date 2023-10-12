@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu (menuName = "Input", fileName = "New InputMap")]
+[CreateAssetMenu (menuName = "Input/Input Map", fileName = "New InputMap")]
 public class InputMap : ScriptableObject
 {
     [SerializeField] List<KeyCode> portKeys;

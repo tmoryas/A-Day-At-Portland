@@ -7,7 +7,8 @@ using UnityEditor.VersionControl;
 
 public class GameManager : MonoBehaviour
 {
-    [Inject] private DialogueDatabase _dialogueDB;
+    [Inject] private DialogueManager _dialogueManager;
+    [Inject] private IInputManager _inputManager;
 
     private float _timer;
     [SerializeField] private int _delay;
@@ -18,8 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        _dialogueDB.DialogueQueue = new Queue<DialogueData>(_dialogueDB.DialogueDataList);
-        GetNextDialogue();
+        _actualDialogue = _dialogueManager.GetNextDialogue(_hourSlot + _minSlot);
     }
 
     void Update()
@@ -36,21 +36,15 @@ public class GameManager : MonoBehaviour
                 _hourSlot += 100;
             }
 
-            GetNextDialogue();
+            _actualDialogue = _dialogueManager.GetNextDialogue(_hourSlot + _minSlot);
         }
-    }
 
-    private void GetNextDialogue()
-    {
-        _actualDialogue.Clear();
-
-        int max = _dialogueDB.DialogueQueue.Count;
-        for (int i = 0; i < max; i++)
+        for(int i = 0; i < _actualDialogue.Count; i++)
         {
-            if (_dialogueDB.DialogueQueue.First().Time == _hourSlot + _minSlot)
-                _actualDialogue.Add(_dialogueDB.DialogueQueue.Dequeue());
-            else
-                break;
+            if (_inputManager.PortToCharaIDs.Contains(_actualDialogue[i].CharacterId))
+            {
+                _dialogueManager.PrintDialogue(_actualDialogue[i]);
+            }
         }
     }
 }

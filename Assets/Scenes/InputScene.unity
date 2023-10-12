@@ -289,7 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ce80df57f424646b478b1553c8b505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMap: {fileID: 11400000, guid: de48cf263f267c141ad467443e05389f, type: 2}
+  _currentMap: {fileID: 11400000, guid: de48cf263f267c141ad467443e05389f, type: 2}
+  _maxPorts: 4
 --- !u!4 &1220642558
 Transform:
   m_ObjectHideFlags: 0

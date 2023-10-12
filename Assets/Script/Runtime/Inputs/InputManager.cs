@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class InputManager : MonoBehaviour, IInputManager
 {
 
     [SerializeField] private InputMap currentMap;
-    private Dictionary<KeyCode, int> portToCharaID;
+    private Dictionary<KeyCode, int> portToCharaID = new Dictionary<KeyCode, int>();
     private List<int> portToCharaIDs;
 
     public List<int> PortToCharaIDs => portToCharaIDs;
@@ -24,6 +25,7 @@ public class InputManager : MonoBehaviour, IInputManager
     private void Update()
     {
         portToCharaIDs = GetActiveChara();
+        //foreach (int i in portToCharaIDs) UnityEngine.Debug.Log(i);
     }
 
     private List<int> GetActiveChara()

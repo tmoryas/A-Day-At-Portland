@@ -1,0 +1,34 @@
+{
+    "name": "Controls Links",
+    "maps": [
+        {
+            "name": "Editor",
+            "id": "73896573-695b-416f-ae3e-fc5091f99e2f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "d7457721-2c6c-4229-870e-a32bdb1e1666",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c85a319c-5720-45cb-af3f-2234f038da7c",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

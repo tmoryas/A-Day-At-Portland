@@ -8,12 +8,14 @@ public class BaliseGetter : MonoBehaviour
     [SerializeField] private List<List<string>> _clueFamilies = new List<List<string>>();
     [SerializeField] private string dialogz;
     private string endBalise = "</>";
+    private string colorEndBalise = "</color>";
 
     private void Start()
     {
         List<(string, string)> u = new List<(string, string)>();
         u = GetClue(dialogz);
         foreach ((string, string) c in u) if(c.Item2 != null) Debug.Log(c);
+        Debug.Log(CleanSentence(dialogz));
     }
 
     private List<(string, string)> GetClue(string stc)
@@ -32,6 +34,23 @@ public class BaliseGetter : MonoBehaviour
             }
         }
         return result;
+    }
+
+    private string CleanSentence (string stc)
+    {
+        string sentence = stc;
+
+        sentence = sentence.Replace(endBalise, colorEndBalise);
+
+        foreach (string clue in _clueType)
+        {
+            if (sentence.Contains(clue))
+            {
+                //check color/clue
+            }
+        }
+
+        return sentence;
     }
 
 }

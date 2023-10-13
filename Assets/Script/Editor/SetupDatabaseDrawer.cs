@@ -33,7 +33,7 @@ public class SetupDatabaseDrawer : Editor
 
             if (GUILayout.Button("New Dialogue Databse"))
             {
-                DialogueDatabase asset = ScriptableObject.CreateInstance<DialogueDatabase>();
+                DialogDatabase asset = ScriptableObject.CreateInstance<DialogDatabase>();
                 string name = UnityEditor.AssetDatabase.GenerateUniqueAssetPath("Assets/Scriptable/DialogueDatabase/" + System.DateTime.Now.ToString("dd-MM") + "_Database.asset");
 
                 for (int i = 1; i < myObject.JsonFile["values"].Count; i++)
@@ -47,12 +47,12 @@ public class SetupDatabaseDrawer : Editor
                         allDialogueTranslation.Add(myObject.JsonFile["values"][i][j]);
                     }
 
-                    asset.DialogueDataList.Add(new DialogueData(Int32.Parse(splitKey[0]), splitKey[1], Int32.Parse(splitKey[2]), allDialogueTranslation));   
+                    asset.DialogueDataList.Add(new DialogData(Int32.Parse(splitKey[0]), splitKey[1], Int32.Parse(splitKey[2]), allDialogueTranslation));   
                 }
 
                 asset.DialogueDataList = asset.DialogueDataList.OrderBy(d => d.Time).ToList();
-
                 AssetDatabase.CreateAsset(asset, name);
+                EditorUtility.SetDirty(asset);
                 AssetDatabase.SaveAssets();
 
                 Debug.Log("New Database created at Assets/Scriptable/DialogueDatabase");

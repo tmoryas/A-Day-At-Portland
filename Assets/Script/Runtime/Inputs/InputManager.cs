@@ -16,7 +16,7 @@ public class InputManager : MonoBehaviour, IInputManager
 
     private void Start()
     {
-        int i = 0;
+        int i = 1;
         foreach (KeyCode k in _currentMap.PortKeys)
         {
             portToCharaID.Add(k, i++);

@@ -47,6 +47,7 @@ public class BaliseGetter : MonoBehaviour
             if (sentence.Contains(clue))
             {
                 //check color/clue
+                sentence = sentence.Replace(clue, BaliseEnum.ClueColorsString[clue].ToString());
             }
         }
 

@@ -336,9 +336,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clueType:
-  - <Time>
-  - <Location>
-  dialogz: oui <Time> haha hoho </> non <Location> ouais </>
+  - <Date>
+  - <Lieu>
+  dialogz: oui <Date> haha hoho </> non <Lieu> ouais </>
 --- !u!4 &2084969510
 Transform:
   m_ObjectHideFlags: 0

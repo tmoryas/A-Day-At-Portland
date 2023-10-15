@@ -12,5 +12,5 @@ public class DialogDatabase : ScriptableObject
 
 
     [SerializeField] private Queue<DialogData> dialogueQueue = new Queue<DialogData>();
-    public Queue<DialogData> DialogueQueue { get => dialogueQueue; set => dialogueQueue = value; }
+    public Queue<DialogData> DialogQueue { get => dialogueQueue; set => dialogueQueue = value; }
 }

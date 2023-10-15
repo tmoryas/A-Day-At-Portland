@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BaliseGetter : MonoBehaviour
 {
+    public TextMeshProUGUI txt1,txt2,txt3,txt4;
+
     [SerializeField] private CluesDictionaries _cluesDictionaries;
     [SerializeField] private List<string> _clueType = new List<string>();
     [SerializeField] private List<List<string>> _clueFamilies = new List<List<string>>();
@@ -92,10 +95,12 @@ public class BaliseGetter : MonoBehaviour
                 if (_cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Date] != "")
                 {
                     _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Date] = _cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Date];
+                    txt1.text = _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Date];
                 }
                 else if (_cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Heure] != "")
                 {
                     _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Heure] = _cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Heure];
+                    txt2.text = _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Heure];
                 }
 
                 break;
@@ -103,12 +108,14 @@ public class BaliseGetter : MonoBehaviour
                 if (_cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Lieu] != "")
                 {
                     _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Lieu] = _cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Lieu];
+                    txt3.text = _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Lieu];
                 }
                 break;
             case CluesDictionaries.FamiliesEnum.Job:
                 if (_cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Metier] != "")
                 {
                     _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Metier] = _cluesDictionaries.AvailableClues[CluesDictionaries.CluesEnum.Metier];
+                    txt4.text = _cluesDictionaries.SavedClues[CluesDictionaries.CluesEnum.Metier];
                 }
                 break;
         }

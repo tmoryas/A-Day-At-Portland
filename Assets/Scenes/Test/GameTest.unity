@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4224bdce0ca584d99759cd9df19b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _languageState: 0
+  _languageState: 1
   canvas: {fileID: 1218406981}
   _topRight: {fileID: 115754839422279394, guid: c17cdef95422bab4491c2192f8e92688, type: 3}
   _topLeft: {fileID: 115754839422279394, guid: d5d47eb981f8a094795377b57c77820e, type: 3}
@@ -2255,7 +2255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d862e2e83222ad47b49212a5fbcb844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  database: {fileID: 11400000, guid: 0e8692ccf54eb97448ed5a7054b2a774, type: 2}
+  database: {fileID: 11400000, guid: 90270fc60fa7905499d70cb8a98eb001, type: 2}
   dialogueManager: {fileID: 1621623532}
   inputManager: {fileID: 1268473752}
 --- !u!114 &2080168487

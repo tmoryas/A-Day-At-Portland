@@ -39,10 +39,11 @@ public class GameManager : MonoBehaviour
             _dialogueManager.UpdateDialog(_inputs, true);
         }
 
-        if (!_inputs.All(_inputManager.PortToCharaIDs.Contains))
+        if (!_inputs.SequenceEqual(_inputManager.PortToCharaIDs))
         {
             _inputs = _inputManager.PortToCharaIDs;
             _dialogueManager.UpdateDialog(_inputs);
+            Debug.Log("input change");
         }
     }
 }

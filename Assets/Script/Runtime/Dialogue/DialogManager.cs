@@ -8,6 +8,7 @@ using Zenject;
 public class DialogManager : MonoBehaviour
 {
     [Inject] private DialogDatabase _dialogDB;
+    [Inject] private BaliseGetter _baliseGetter;
     [SerializeField] private LanguageState _languageState;
 
     [Header("Bubble OBJ")]
@@ -27,8 +28,9 @@ public class DialogManager : MonoBehaviour
 
     [Header("Dialogue actuel")]
     private Dictionary<int, DialogData> _actualDialog = new Dictionary<int, DialogData>();
-    private Dictionary<int, bool> _characterTalkingDic = new Dictionary<int, bool>(); 
+    private Dictionary<int, bool> _characterTalkingDic = new Dictionary<int, bool>();
 
+    public Dictionary<int, DialogData> ActualDialog { get => _actualDialog; }
 
     void Awake()
     {
@@ -68,6 +70,7 @@ public class DialogManager : MonoBehaviour
 
                 if (_actualBubbleObjPos[i].Item1 != null)
                 {
+                    _baliseGetter.DeleteAvailableClue(i);
                     Destroy(_actualBubbleObjPos[i].Item1.BubbleRoot);
 
                     _spaceUse[_actualBubbleObjPos[i].Item2] = false;
@@ -88,7 +91,7 @@ public class DialogManager : MonoBehaviour
                 BubbleProxy bubble = Instantiate(bubbleData.Item1, _characterTransform[i].position, Quaternion.identity, canvas).GetComponent<BubbleProxy>();
                 _actualBubbleObjPos.Add(i, (bubble, bubbleData.Item2));
                 
-                bubble.TextComponent.text = _actualDialog[i].Text[(int)_languageState];
+                bubble.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
 
                 _characterTalkingDic[i] = true;
             }
@@ -97,7 +100,7 @@ public class DialogManager : MonoBehaviour
                 // MAJ Text
                 Debug.Log("MAJ");
 
-                _actualBubbleObjPos[i].Item1.TextComponent.text = _actualDialog[i].Text[(int)_languageState];
+                _actualBubbleObjPos[i].Item1.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
             }
 
             //NOTHING

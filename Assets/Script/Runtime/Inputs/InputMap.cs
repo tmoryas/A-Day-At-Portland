@@ -10,5 +10,7 @@ public class InputMap : ScriptableObject
     [SerializeField] KeyCode leverKey;
 
     public List<KeyCode> PortKeys { get => portKeys; set => portKeys = value; }
+    public List<KeyCode> ClueKeys { get => clueKeys; set => clueKeys = value; }
+    public KeyCode LeverKey { get => leverKey; set => leverKey = value; }
     //[SerializeField] int/float wheelValue;
 }

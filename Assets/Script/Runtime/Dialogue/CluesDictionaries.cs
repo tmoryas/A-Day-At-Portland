@@ -8,19 +8,27 @@ public class CluesDictionaries : MonoBehaviour
     public enum CluesEnum
     {
         Date,
-        Heure,
         Lieu,
-        Metier
+        Metier,
+        Heure,
+        Rien
     }
 
-    //dico couleur
-
-    private Dictionary<CluesEnum, string> clueColors = new Dictionary<CluesEnum, string>()
+    public enum FamiliesEnum
     {
-        { CluesEnum.Date, "<color=blue>" },
-        { CluesEnum.Heure, "<color=blue>" },
-        { CluesEnum.Lieu, "<color=red>" },
-        { CluesEnum.Metier, "<color=green>" }
+        Time,
+        Place,
+        Job,
+        Rien
+    }
+
+
+    private Dictionary<string, CluesEnum> clueEnumName = new Dictionary<string, CluesEnum>()
+    {
+        { "<Date>", CluesEnum.Date },
+        { "<Heure>", CluesEnum.Heure },
+        { "<Lieu>", CluesEnum.Lieu },
+        { "<Metier>", CluesEnum.Metier }
 
     };
 
@@ -35,7 +43,28 @@ public class CluesDictionaries : MonoBehaviour
 
     [SerializeField] private SerializedDictionary<string, string> clueFinal;
 
-    public Dictionary<CluesEnum, string> ClueColors { get => clueColors; }
+    private SerializedDictionary<CluesEnum, string> availableClues = new SerializedDictionary<CluesEnum, string>()
+    {
+        { CluesEnum.Date, ""},
+        { CluesEnum.Lieu, ""},
+        { CluesEnum.Metier, ""},
+        { CluesEnum.Heure, ""}
+    };
+
+    private SerializedDictionary<CluesEnum, string> savedClues = new SerializedDictionary<CluesEnum, string>()
+    {
+        { CluesEnum.Date, ""},
+        { CluesEnum.Lieu, ""},
+        { CluesEnum.Metier, ""},
+        { CluesEnum.Heure, ""}
+    };
+
+
+
+
+    public Dictionary<CluesEnum, string> AvailableClues { get => availableClues; }
+    public Dictionary<CluesEnum, string> SavedClues { get => savedClues; }
+    public Dictionary<string, CluesEnum> ClueEnumName { get => clueEnumName; }
     public Dictionary<string, string> ClueColorsString { get => clueColorsString; }
     public Dictionary<string, string> ClueFinal { get => clueFinal; }
 }

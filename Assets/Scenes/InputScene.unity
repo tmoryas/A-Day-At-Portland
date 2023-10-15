@@ -291,6 +291,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentMap: {fileID: 11400000, guid: de48cf263f267c141ad467443e05389f, type: 2}
   _maxPorts: 4
+  inputToClue:
+    _serializedList:
+    - Key: 111
+      Value: 0
+    - Key: 59
+      Value: 1
+    - Key: 44
+      Value: 2
 --- !u!4 &1220642558
 Transform:
   m_ObjectHideFlags: 0
@@ -340,7 +348,8 @@ MonoBehaviour:
   _clueType:
   - <Date>
   - <Lieu>
-  dialogz: oui <Date> haha hoho </> non <Lieu> ouais </>
+  - <Metier>
+  dialogz: oui <Date> haha hoho </> non <Lieu> ouais </><Metier>cheh</>
 --- !u!4 &2084969510
 Transform:
   m_ObjectHideFlags: 0

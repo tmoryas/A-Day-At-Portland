@@ -3,11 +3,10 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using UnityEditor.VersionControl;
 
 public class GameManager : MonoBehaviour
 {
-    [Inject] private DialogueManager _dialogueManager;
+    [Inject] private DialogManager _dialogueManager;
     [Inject] private IInputManager _inputManager;
 
     private float _timer;
@@ -15,11 +14,11 @@ public class GameManager : MonoBehaviour
     private int _minSlot = 0;
     private int _hourSlot = 0;
 
-    private List<DialogueData> _actualDialogue = new List<DialogueData>();
+    private List<int> _inputs = new List<int>();
 
     private void Start()
     {
-        _actualDialogue = _dialogueManager.GetNextDialogue(_hourSlot + _minSlot);
+        _dialogueManager.GetNextDialog(_hourSlot + _minSlot);
     }
 
     void Update()
@@ -36,15 +35,15 @@ public class GameManager : MonoBehaviour
                 _hourSlot += 100;
             }
 
-            _actualDialogue = _dialogueManager.GetNextDialogue(_hourSlot + _minSlot);
+            _dialogueManager.GetNextDialog(_hourSlot + _minSlot);
+            _dialogueManager.UpdateDialog(_inputs, true);
         }
 
-        for(int i = 0; i < _actualDialogue.Count; i++)
+        if (!_inputs.SequenceEqual(_inputManager.PortToCharaIDs))
         {
-            if (_inputManager.PortToCharaIDs.Contains(_actualDialogue[i].CharacterId))
-            {
-                _dialogueManager.PrintDialogue(_actualDialogue[i]);
-            }
+            _inputs = _inputManager.PortToCharaIDs;
+            _dialogueManager.UpdateDialog(_inputs);
+            Debug.Log("input change");
         }
     }
 }

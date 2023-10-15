@@ -10,7 +10,17 @@ public class InputMap : ScriptableObject
     [SerializeField] KeyCode leverKey;
 
     public List<KeyCode> PortKeys { get => portKeys; set => portKeys = value; }
+
     public List<KeyCode> ClueKeys { get => clueKeys; set => clueKeys = value; }
     public KeyCode LeverKey { get => leverKey; set => leverKey = value; }
+
+
+
     //[SerializeField] int/float wheelValue;
+
+    //TEMP 
+    [SerializeField] KeyCode backwardKey;
+    [SerializeField] KeyCode forwardKey;
+    public KeyCode BackwardKey => backwardKey;
+    public KeyCode ForwardKey => forwardKey;
 }

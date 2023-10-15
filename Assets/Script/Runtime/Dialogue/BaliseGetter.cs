@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaliseGetter : MonoBehaviour
 {
+    [SerializeField] private CluesDictionaries _cluesDictionaries;
     [SerializeField] private List<string> _clueType = new List<string>();
     [SerializeField] private List<List<string>> _clueFamilies = new List<List<string>>();
     [SerializeField] private string dialogz;
@@ -47,7 +48,7 @@ public class BaliseGetter : MonoBehaviour
             if (sentence.Contains(clue))
             {
                 //check color/clue
-                sentence = sentence.Replace(clue, BaliseEnum.ClueColorsString[clue].ToString());
+                sentence = sentence.Replace(clue, _cluesDictionaries.ClueColorsString[clue].ToString());
             }
         }
 

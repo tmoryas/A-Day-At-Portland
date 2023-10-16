@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022f90fd8bfbb94458ba6b6aec771f99, type: 3}
-  m_Name: 15-10_Database
+  m_Name: 15-10_Database 1
   m_EditorClassIdentifier: 
   dialogueDataList:
   - _characterId: 1
@@ -18,7 +18,7 @@ MonoBehaviour:
     _time: 0
     _text:
     - F1
-    - Hello darling, how are you this morning? <Date>I didn't</> get a chance to
+    - Hello darling, how are you this morning? <Date> I didn't </> get a chance to
       wish you a good day - you know me, work always calls!
   - _characterId: 2
     _emotionSprite: A
@@ -37,7 +37,7 @@ MonoBehaviour:
     _time: 10
     _text:
     - F3
-    - Well? <Metier>Still</> sleepy?
+    - Well? <Metier> Still </> sleepy?
   - _characterId: 2
     _emotionSprite: A
     _time: 10

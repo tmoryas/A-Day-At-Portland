@@ -291,6 +291,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentMap: {fileID: 11400000, guid: de48cf263f267c141ad467443e05389f, type: 2}
   _maxPorts: 4
+  inputToClue:
+    _serializedList:
+    - Key: 111
+      Value: 0
+    - Key: 59
+      Value: 1
+    - Key: 44
+      Value: 2
 --- !u!4 &1220642558
 Transform:
   m_ObjectHideFlags: 0
@@ -316,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084969510}
   - component: {fileID: 2084969509}
+  - component: {fileID: 2084969511}
   m_Layer: 0
   m_Name: dialogu
   m_TagString: Untagged
@@ -335,10 +344,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358b69de59bc81545ac2cb528ccaa89b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cluesDictionaries: {fileID: 2084969511}
   _clueType:
-  - <Time>
-  - <Location>
-  dialogz: oui <Time> haha hoho </> non <Location> ouais </>
+  - <Date>
+  - <Lieu>
+  - <Metier>
+  dialogz: oui <Date> haha hoho </> non <Lieu> ouais </><Metier>cheh</>
 --- !u!4 &2084969510
 Transform:
   m_ObjectHideFlags: 0
@@ -354,6 +365,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2084969511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084969508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838d63b3747311745abce9f1b256a2d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueColorsString:
+    _serializedList:
+    - Key: <Date>
+      Value: <color=blue>
+    - Key: <Heure>
+      Value: <color=blue>
+    - Key: <Lieu>
+      Value: <color=red>
+    - Key: <Metier>
+      Value: <color=green>
+  clueFinal:
+    _serializedList:
+    - Key: <Date>
+      Value: "5 d\xE9cembre"
+    - Key: <Lieu>
+      Value: Bastille
+    - Key: <Metier>
+      Value: boucher
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

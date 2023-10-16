@@ -8,11 +8,17 @@ using Zenject;
 public class DialogManager : MonoBehaviour
 {
     [Inject] private DialogDatabase _dialogDB;
+    [Inject] private BaliseGetter _baliseGetter;
     [SerializeField] private LanguageState _languageState;
 
     [Header("Bubble OBJ")]
     [SerializeField] private Transform canvas;
     [SerializeField] private GameObject _topRight, _topLeft, _bottomRight, _bottomLeft;
+
+    [Header("Sprite")]
+    [SerializeField] private SerializedDictionary<int, CharacterObj> _characterSprite;
+    [SerializeField] private FrameSprite _spriteEteint;
+    [SerializeField] private FrameSprite _spriteAllumer;
 
     [Header("Information")]
     [SerializeField] private SerializedDictionary<int, RectTransform> _characterTransform; // -> Instantier les bulles a cette endroit
@@ -27,8 +33,9 @@ public class DialogManager : MonoBehaviour
 
     [Header("Dialogue actuel")]
     private Dictionary<int, DialogData> _actualDialog = new Dictionary<int, DialogData>();
-    private Dictionary<int, bool> _characterTalkingDic = new Dictionary<int, bool>(); 
+    private Dictionary<int, bool> _characterTalkingDic = new Dictionary<int, bool>();
 
+    public Dictionary<int, DialogData> ActualDialog { get => _actualDialog; }
 
     void Awake()
     {
@@ -40,6 +47,9 @@ public class DialogManager : MonoBehaviour
 
     public void GetNextDialog(int time)
     {
+        foreach (DialogData data in _actualDialog.Values)
+            _characterSprite[data.CharacterId].LightEffect.sprite = _spriteEteint.LightEffect;
+
         _actualDialog = new Dictionary<int, DialogData>();
 
         int max = _dialogDB.DialogQueue.Count;
@@ -49,6 +59,8 @@ public class DialogManager : MonoBehaviour
             {
                 DialogData data = _dialogDB.DialogQueue.Dequeue();
                 _actualDialog.Add(data.CharacterId, data);
+
+                _characterSprite[data.CharacterId].LightEffect.sprite = _spriteAllumer.LightEffect;
             }
             else
                 break;
@@ -68,11 +80,16 @@ public class DialogManager : MonoBehaviour
 
                 if (_actualBubbleObjPos[i].Item1 != null)
                 {
+                    _baliseGetter.DeleteAvailableClue(i);
                     Destroy(_actualBubbleObjPos[i].Item1.BubbleRoot);
 
                     _spaceUse[_actualBubbleObjPos[i].Item2] = false;
                     _actualBubbleObjPos.Remove(i);
-              
+
+                    _characterSprite[i].Background.sprite = _spriteEteint.Background;
+                    _characterSprite[i].Frame.sprite = _spriteEteint.Frame;
+                    _characterSprite[i].Frame_shadow.sprite = _spriteEteint.Frame_shadow;
+
                     _characterTalkingDic[i] = false;
                 }
             }
@@ -88,7 +105,11 @@ public class DialogManager : MonoBehaviour
                 BubbleProxy bubble = Instantiate(bubbleData.Item1, _characterTransform[i].position, Quaternion.identity, canvas).GetComponent<BubbleProxy>();
                 _actualBubbleObjPos.Add(i, (bubble, bubbleData.Item2));
                 
-                bubble.TextComponent.text = _actualDialog[i].Text[(int)_languageState];
+                bubble.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
+
+                _characterSprite[i].Background.sprite = _spriteAllumer.Background;
+                _characterSprite[i].Frame.sprite = _spriteAllumer.Frame;
+                _characterSprite[i].Frame_shadow.sprite = _spriteAllumer.Frame_shadow;
 
                 _characterTalkingDic[i] = true;
             }
@@ -97,7 +118,7 @@ public class DialogManager : MonoBehaviour
                 // MAJ Text
                 Debug.Log("MAJ");
 
-                _actualBubbleObjPos[i].Item1.TextComponent.text = _actualDialog[i].Text[(int)_languageState];
+                _actualBubbleObjPos[i].Item1.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
             }
 
             //NOTHING

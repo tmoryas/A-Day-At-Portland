@@ -15,6 +15,11 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private Transform canvas;
     [SerializeField] private GameObject _topRight, _topLeft, _bottomRight, _bottomLeft;
 
+    [Header("Sprite")]
+    [SerializeField] private SerializedDictionary<int, CharacterObj> _characterSprite;
+    [SerializeField] private FrameSprite _spriteEteint;
+    [SerializeField] private FrameSprite _spriteAllumer;
+
     [Header("Information")]
     [SerializeField] private SerializedDictionary<int, RectTransform> _characterTransform; // -> Instantier les bulles a cette endroit
     [SerializeField] private SerializedDictionary<int, CharacterPlaceEnum> _characterPlace; // -> Set a la main la position des cadres pour les bulles
@@ -42,6 +47,9 @@ public class DialogManager : MonoBehaviour
 
     public void GetNextDialog(int time)
     {
+        foreach (DialogData data in _actualDialog.Values)
+            _characterSprite[data.CharacterId].LightEffect.sprite = _spriteEteint.LightEffect;
+
         _actualDialog = new Dictionary<int, DialogData>();
 
         int max = _dialogDB.DialogQueue.Count;
@@ -51,6 +59,8 @@ public class DialogManager : MonoBehaviour
             {
                 DialogData data = _dialogDB.DialogQueue.Dequeue();
                 _actualDialog.Add(data.CharacterId, data);
+
+                _characterSprite[data.CharacterId].LightEffect.sprite = _spriteAllumer.LightEffect;
             }
             else
                 break;
@@ -75,7 +85,11 @@ public class DialogManager : MonoBehaviour
 
                     _spaceUse[_actualBubbleObjPos[i].Item2] = false;
                     _actualBubbleObjPos.Remove(i);
-              
+
+                    _characterSprite[i].Background.sprite = _spriteEteint.Background;
+                    _characterSprite[i].Frame.sprite = _spriteEteint.Frame;
+                    _characterSprite[i].Frame_shadow.sprite = _spriteEteint.Frame_shadow;
+
                     _characterTalkingDic[i] = false;
                 }
             }
@@ -92,6 +106,10 @@ public class DialogManager : MonoBehaviour
                 _actualBubbleObjPos.Add(i, (bubble, bubbleData.Item2));
                 
                 bubble.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
+
+                _characterSprite[i].Background.sprite = _spriteAllumer.Background;
+                _characterSprite[i].Frame.sprite = _spriteAllumer.Frame;
+                _characterSprite[i].Frame_shadow.sprite = _spriteAllumer.Frame_shadow;
 
                 _characterTalkingDic[i] = true;
             }

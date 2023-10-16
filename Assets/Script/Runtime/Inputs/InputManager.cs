@@ -18,7 +18,9 @@ public class InputManager : MonoBehaviour, IInputManager
     [SerializeField] private SerializedDictionary<KeyCode, CluesDictionaries.FamiliesEnum> inputToClue;
     private CluesDictionaries.FamiliesEnum selectedClue;
 
+    public InputMap CurrentMap => _currentMap;
     public List<int> PortToCharaIDs => portToCharaIDs;
+
 
     private void Start()
     {

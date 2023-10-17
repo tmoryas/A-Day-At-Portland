@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour
         _hourSlot = nextTime;
 
         _dialogueManager.ActualDialog.Clear();
-        _dialogueManager.UpdateDialog(_inputs);
         _dialogueManager.ResetDialogData();
+        _dialogueManager.UpdateDialog(_inputs);
 
         switchTime = true;
         yield return new WaitForSeconds(0.5f);

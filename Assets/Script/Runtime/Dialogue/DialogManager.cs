@@ -39,10 +39,17 @@ public class DialogManager : MonoBehaviour
 
     void Awake()
     {
-        _dialogDB.DialogQueue = new Queue<DialogData>(_dialogDB.DialogueDataList);
+        ResetDialogData();
         
         for (int i = 1; i < 11; i++)
             _characterTalkingDic.Add(i, false);
+    }
+
+    public void ResetDialogData()
+    {
+        _dialogDB.DialogQueue = new Queue<DialogData>(_dialogDB.DialogueDataList);
+        for(int i = 1; i < 11; i++)
+            _characterSprite[i].LightEffect.sprite = _spriteEteint.LightEffect;
     }
 
     public void GetNextDialog(int time)

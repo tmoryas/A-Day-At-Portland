@@ -46,15 +46,17 @@ public class GameManager : MonoBehaviour
         {
             _inputs = _inputManager.PortToCharaIDs;
             _dialogueManager.UpdateDialog(_inputs);
-            Debug.Log("input change");
+            //Debug.Log("input change");
         }
 
         if (Input.GetKeyDown(_inputManager.CurrentMap.ForwardKey))
         {
+            _dialogueManager.ForwardDialogData(_hourSlot + 100);
             StartCoroutine(SwitchTime(_hourSlot + 100));
         }
         else if (Input.GetKeyDown(_inputManager.CurrentMap.BackwardKey))
         {
+            _dialogueManager.ResetDialogData();
             StartCoroutine(SwitchTime(0));
         }
     }
@@ -66,7 +68,6 @@ public class GameManager : MonoBehaviour
         _hourSlot = nextTime;
 
         _dialogueManager.ActualDialog.Clear();
-        _dialogueManager.ResetDialogData();
         _dialogueManager.UpdateDialog(_inputs);
 
         switchTime = true;

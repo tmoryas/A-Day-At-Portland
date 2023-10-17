@@ -34,10 +34,10 @@ public class CluesDictionaries : MonoBehaviour
 
     [SerializeField] private SerializedDictionary<string, string> clueColorsString = new SerializedDictionary<string, string>()
     {
-        { "<Date>", "<color=blue>" },
-        { "<Heure>", "<color=blue>" },
-        { "<Lieu>", "<color=red>" },
-        { "<Metier>", "<color=green>" }
+        { "<Date>", "<color=#008ca3>" },
+        { "<Heure>", "<color=#008ca3>" },
+        { "<Lieu>", "<color=#a21700>" },
+        { "<Metier>", "<color=#4eb303>" }
 
     };
 

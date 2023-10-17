@@ -8,13 +8,11 @@ public class CharacterObj : MonoBehaviour
     [SerializeField] private Image _background;
     [SerializeField] private Image _character;
     [SerializeField] private Image _frame;
-    [SerializeField] private Image _frame_shadow;
 
     [SerializeField] private Image _lightEffect;
 
     public Image Background => _background;
     public Image Character => _character;
     public Image Frame => _frame; 
-    public Image Frame_shadow => _frame_shadow;
     public Image LightEffect => _lightEffect;
 }

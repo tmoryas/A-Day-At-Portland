@@ -2404,7 +2404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d90af6336c191147bc52a82b58d85cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 5
+  _delay: 10
 --- !u!4 &1513205277
 Transform:
   m_ObjectHideFlags: 0
@@ -2493,16 +2493,14 @@ MonoBehaviour:
     - Key: 10
       Value: {fileID: 1374098382}
   _spriteEteint:
-    _background: {fileID: 21300000, guid: 96ec45f4c8e257b4cba511f2f95f166d, type: 3}
+    _background: {fileID: 21300000, guid: 9df628860bb60844e8788ea3e7b679fe, type: 3}
     _character: {fileID: 0}
     _frame: {fileID: 21300000, guid: d2e4a954dd7fa43439b93bae8a0bde22, type: 3}
-    _frame_shadow: {fileID: 21300000, guid: f3af4793f21eac64b8fa7d6d1e698033, type: 3}
     _lightEffect: {fileID: 21300000, guid: 870a632b66265c14f92d7e1ea3cf4edb, type: 3}
   _spriteAllumer:
-    _background: {fileID: 21300000, guid: 95c998d7fe21901458ef43a84f3fc175, type: 3}
+    _background: {fileID: 21300000, guid: a32f5e03e46dfa749aa89fed1eef0a06, type: 3}
     _character: {fileID: 0}
-    _frame: {fileID: 21300000, guid: d5e3c5c1a66e08c44befb429d6654658, type: 3}
-    _frame_shadow: {fileID: 21300000, guid: d9245ac1ce5d6f548aeec6ec10eab599, type: 3}
+    _frame: {fileID: 21300000, guid: c8247544d7e10fe41b49ac1a05f5399a, type: 3}
     _lightEffect: {fileID: 21300000, guid: a59af1aadd9b3554183d2ebfa5623fc6, type: 3}
   _characterTransform:
     _serializedList:

@@ -95,7 +95,6 @@ public class DialogManager : MonoBehaviour
 
                     _characterSprite[i].Background.sprite = _spriteEteint.Background;
                     _characterSprite[i].Frame.sprite = _spriteEteint.Frame;
-                    _characterSprite[i].Frame_shadow.sprite = _spriteEteint.Frame_shadow;
 
                     _characterTalkingDic[i] = false;
                 }
@@ -116,7 +115,6 @@ public class DialogManager : MonoBehaviour
 
                 _characterSprite[i].Background.sprite = _spriteAllumer.Background;
                 _characterSprite[i].Frame.sprite = _spriteAllumer.Frame;
-                _characterSprite[i].Frame_shadow.sprite = _spriteAllumer.Frame_shadow;
 
                 _characterTalkingDic[i] = true;
             }

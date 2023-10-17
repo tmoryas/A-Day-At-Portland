@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IInputManager
 {
     public List<int> PortToCharaIDs { get; }
+    public InputMap CurrentMap { get; }
 }

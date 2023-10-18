@@ -22,7 +22,7 @@ public class BaliseGetter : MonoBehaviour
     {
         List<(string, string)> u = new List<(string, string)>();
         u = GetClue(dialogz);
-        foreach ((string, string) c in u) if(c.Item2 != null) Debug.Log(c);
+        //foreach ((string, string) c in u) if(c.Item2 != null) Debug.Log(c);
         //ebug.Log(CleanSentence(dialogz));
     }
 

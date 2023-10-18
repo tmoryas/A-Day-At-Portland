@@ -1,4 +1,5 @@
 using AYellowpaper.SerializedCollections;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,8 +16,12 @@ public class InputManager : MonoBehaviour, IInputManager
     private List<int> portToCharaIDs;
     [SerializeField] private int _maxPorts = 4;
 
+    [SerializeField] private float bannerMoveDistance = 350f;
+    [SerializeField] private float bannerMoveSpeed = 0.15f;
+
     [SerializeField] private SerializedDictionary<KeyCode, CluesDictionaries.FamiliesEnum> inputToClue;
     private CluesDictionaries.FamiliesEnum selectedClue;
+    private CluesDictionaries.FamiliesEnum previousClue;
 
     public InputMap CurrentMap => _currentMap;
     public List<int> PortToCharaIDs => portToCharaIDs;
@@ -29,22 +34,24 @@ public class InputManager : MonoBehaviour, IInputManager
         {
             portToCharaID.Add(k, i++);
         }
+
+        selectedClue = CluesDictionaries.FamiliesEnum.Time;
+        previousClue = selectedClue;
     }
 
     private void Update()
     {
         portToCharaIDs = GetActiveChara();
         selectedClue = ClueTypeSelection();
+        if (previousClue != selectedClue && selectedClue != CluesDictionaries.FamiliesEnum.Rien)
+        {
+            _baliseGetter.CluesDictionaries.BannerDico[previousClue].transform.
+                DOMoveX(_baliseGetter.CluesDictionaries.BannerDico[previousClue].transform.position.x + bannerMoveDistance, 0.15f).SetEase(Ease.OutCubic);
+            _baliseGetter.CluesDictionaries.BannerDico[selectedClue].transform.
+                DOMoveX(_baliseGetter.CluesDictionaries.BannerDico[selectedClue].transform.position.x - bannerMoveDistance, 0.15f).SetEase(Ease.OutCubic);
+            previousClue = selectedClue;
+        }
         if (Input.GetKeyDown(_currentMap.LeverKey)) _baliseGetter.SaveClue(selectedClue);
-        //    _baliseGetter.CluesDictionaries.CurrentSavedClues[selectedClue] = ClueSave(_baliseGetter.CluesDictionaries.CurrentSavedClues[selectedClue]);
-        //foreach (int i in portToCharaIDs) UnityEngine.Debug.Log(i);
-        //foreach (KeyCode k in _currentMap.ClueKeys)
-        //{
-        //    if (Input.GetKey(k))
-        //    {
-        //        UnityEngine.Debug.Log("Clue : " + ClueTypeSelection().ToString());
-        //    }
-        //}
     }
 
     private List<int> GetActiveChara()

@@ -930,6 +930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697984936}
+  - component: {fileID: 697984937}
   m_Layer: 5
   m_Name: SavedClues
   m_TagString: Untagged
@@ -946,8 +947,8 @@ RectTransform:
   m_GameObject: {fileID: 697984935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1258833302}
   - {fileID: 581442313}
@@ -956,9 +957,30 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 830, y: -6}
+  m_AnchoredPosition: {x: 1168, y: 67}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &697984937
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697984935}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 985f0cbd40109cd40bd5abbca0308394, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &758341608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1490,16 @@ MonoBehaviour:
       Value: Bastille
     - Key: <Metier>
       Value: boucher
+  bannerDico:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 1258833301}
+    - Key: 1
+      Value: {fileID: 581442312}
+    - Key: 2
+      Value: {fileID: 1092585161}
+    - Key: 3
+      Value: {fileID: 1258833301}
 --- !u!1 &868378832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,7 +2360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 345}
+  m_AnchoredPosition: {x: -390, y: 345}
   m_SizeDelta: {x: 568, y: 299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258833303
@@ -2400,6 +2432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentMap: {fileID: 11400000, guid: b50e6658781d8c741a44eafcc0a2f0a2, type: 2}
   _maxPorts: 4
+  bannerMoveDistance: 350
+  bannerMoveSpeed: 0.08
   inputToClue:
     _serializedList:
     - Key: 110
@@ -2896,7 +2930,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132, y: -1}
+  m_AnchoredPosition: {x: -119, y: -1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447476561
@@ -3519,7 +3553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -2}
+  m_AnchoredPosition: {x: 20, y: -2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950319200

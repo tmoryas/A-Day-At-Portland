@@ -59,6 +59,8 @@ public class CluesDictionaries : MonoBehaviour
         { CluesEnum.Heure, ""}
     };
 
+    [SerializeField] private SerializedDictionary<FamiliesEnum, GameObject> bannerDico = new SerializedDictionary<FamiliesEnum, GameObject>();
+
 
 
 
@@ -67,4 +69,5 @@ public class CluesDictionaries : MonoBehaviour
     public Dictionary<string, CluesEnum> ClueEnumName { get => clueEnumName; }
     public Dictionary<string, string> ClueColorsString { get => clueColorsString; }
     public Dictionary<string, string> ClueFinal { get => clueFinal; }
+    public Dictionary<FamiliesEnum, GameObject> BannerDico { get => bannerDico; }
 }

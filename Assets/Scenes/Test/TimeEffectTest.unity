@@ -1567,14 +1567,12 @@ MonoBehaviour:
       Value: <color=#a21700>>
     - Key: <Metier>
       Value: <color=#4eb303>
-  clueFinal:
-    _serializedList:
-    - Key: <Date>
-      Value: "5 d\xE9cembre"
-    - Key: <Lieu>
-      Value: Bastille
-    - Key: <Metier>
-      Value: boucher
+  clueGoodEnding:
+    _serializedList: []
+  clueBadEnding:
+    _serializedList: []
+  bannerDico:
+    _serializedList: []
 --- !u!1 &868378832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,6 +2610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentMap: {fileID: 11400000, guid: b50e6658781d8c741a44eafcc0a2f0a2, type: 2}
   _maxPorts: 4
+  bannerMoveDistance: 350
+  bannerMoveSpeed: 0.15
   inputToClue:
     _serializedList:
     - Key: 110
@@ -4048,6 +4048,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1621623532}
   inputManager: {fileID: 1268473752}
   baliseGetter: {fileID: 854840149}
+  endingManager: {fileID: 0}
 --- !u!114 &2080168487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,6 +4253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watch
       objectReference: {fileID: 0}
+    - target: {fileID: 954491325134117268, guid: b25bf3dc50ccc55479db0c4309135afc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8926694603780446724, guid: b25bf3dc50ccc55479db0c4309135afc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4318,7 +4323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8926694603780446724, guid: b25bf3dc50ccc55479db0c4309135afc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -507.4
+      value: -545.9
       objectReference: {fileID: 0}
     - target: {fileID: 8926694603780446724, guid: b25bf3dc50ccc55479db0c4309135afc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

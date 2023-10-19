@@ -40,6 +40,10 @@ public class SetupDatabaseDrawer : Editor
                 {
                     string key = myObject.JsonFile["values"][i][0];
                     string[] splitKey = key.Split('_');
+
+                    if (splitKey[0] == "" || splitKey[1] == "" || splitKey[2] == "")
+                        continue;
+
                     List<string> allDialogueTranslation = new List<string>();
 
                     for (int j = 4; j < myObject.JsonFile["values"][0].Count; j++)

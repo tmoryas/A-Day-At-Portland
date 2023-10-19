@@ -27,7 +27,7 @@ public class InputManager : MonoBehaviour, IInputManager
 
 
     [Header("Rotary Encoder")]
-    private bool _unlockChangeTime;
+    [SerializeField] private bool _unlockChangeTime;
     private int _actualTurn = -1;
     private int _lastStep = 0;
     private bool _clockwise = false;

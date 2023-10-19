@@ -10,21 +10,12 @@ public class BaliseGetter : MonoBehaviour
     [SerializeField] private CluesDictionaries _cluesDictionaries;
     [SerializeField] private List<string> _clueType = new List<string>();
     [SerializeField] private List<List<string>> _clueFamilies = new List<List<string>>();
-    [SerializeField] private string dialogz;
     private string endBalise = "</>";
     private string colorEndBalise = "</color>";
 
     private Dictionary<int, List<CluesDictionaries.CluesEnum>> charaIdToCluesEnum = new Dictionary<int, List<CluesDictionaries.CluesEnum>>();
 
     public CluesDictionaries CluesDictionaries { get => _cluesDictionaries; set => _cluesDictionaries = value; }
-
-    private void Start()
-    {
-        List<(string, string)> u = new List<(string, string)>();
-        u = GetClue(dialogz);
-        //foreach ((string, string) c in u) if(c.Item2 != null) Debug.Log(c);
-        //ebug.Log(CleanSentence(dialogz));
-    }
 
     public List<(string, string)> GetClue(string stc)
     {

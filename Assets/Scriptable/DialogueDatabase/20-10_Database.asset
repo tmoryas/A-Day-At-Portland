@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022f90fd8bfbb94458ba6b6aec771f99, type: 3}
-  m_Name: 19-10_Database
+  m_Name: 20-10_Database
   m_EditorClassIdentifier: 
   dialogueDataList:
   - _characterId: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
     _text:
     - F2
     - Where are you?!
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 10
     _text:
@@ -112,7 +112,7 @@ MonoBehaviour:
     _text:
     - F19
     - I hope so darling! We really need to make this trade.
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 25
     _text:
@@ -166,7 +166,7 @@ MonoBehaviour:
     _text:
     - F19
     - "But man! I\u2019m your favorite client, you can do this for me!"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 40
     _text:
@@ -215,7 +215,7 @@ MonoBehaviour:
     _text:
     - F19
     - "The Dukes know nothing about business! \u2026 Fine"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 100
     _text:
@@ -264,7 +264,7 @@ MonoBehaviour:
     _text:
     - F19
     - '*shhh* When is *shhh* 1 pm? Sure *shhh*'
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 115
     _text:
@@ -314,7 +314,7 @@ MonoBehaviour:
     _text:
     - F19
     - Molly!!! I think I just revealed our secret to the wrong person!!
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 130
     _text:
@@ -339,7 +339,7 @@ MonoBehaviour:
     _text:
     - F19
     - What are you saying you stupid rat?
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 135
     _text:
@@ -382,7 +382,7 @@ MonoBehaviour:
     _text:
     - F19
     - She?! Our little shark is not a woman! Do you really have the right number?!
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 145
     _text:
@@ -419,7 +419,7 @@ MonoBehaviour:
     _text:
     - F19
     - "You didn\u2019t reveal our identity right? Imagine she called the police\u2026"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 155
     _text:
@@ -437,7 +437,7 @@ MonoBehaviour:
     _text:
     - F19
     - "Oh no\u2026 Don\u2019t worry about this!"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 200
     _text:
@@ -494,7 +494,7 @@ MonoBehaviour:
     _text:
     - F19
     - Hello! We are offering you 42% off on our Whiskey collection!
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 220
     _text:
@@ -840,7 +840,7 @@ MonoBehaviour:
     _text:
     - F19
     - Well? What did he say?
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 410
     _text:
@@ -883,7 +883,7 @@ MonoBehaviour:
     _text:
     - F19
     - "No, don't worry! But you know what? I have to call you back. Important business!\t"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 425
     _text:
@@ -952,7 +952,7 @@ MonoBehaviour:
     _text:
     - F19
     - "Please be the good one\u2026"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 445
     _text:
@@ -1011,7 +1011,7 @@ MonoBehaviour:
     - F19
     - "You are not safe in this city, it\u2019s only a question of time before they
       know everything about both of us."
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 500
     _text:
@@ -1049,7 +1049,7 @@ MonoBehaviour:
     _text:
     - F19
     - I hope it has nothing to do with our package.
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 515
     _text:
@@ -1118,7 +1118,7 @@ MonoBehaviour:
     _text:
     - F19
     - "Why? Should I be elsewhere? Don\u2019t you have something to say to me?"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 545
     _text:
@@ -1167,7 +1167,7 @@ MonoBehaviour:
     _text:
     - F19
     - "Don\u2019t tell me you called him back\u2026"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 555
     _text:
@@ -1194,7 +1194,7 @@ MonoBehaviour:
     - F19
     - "You are being unprofessional! If we lose this business it\u2019s the end of
       the perfumery!"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 600
     _text:
@@ -1214,7 +1214,7 @@ MonoBehaviour:
     _text:
     - F19
     - "Sorry love, it won\u2019t happen again! Now that I know the real number\u2026"
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 605
     _text:
@@ -1250,7 +1250,7 @@ MonoBehaviour:
     _text:
     - F19
     - Sure, going to pass by the restaurant at NorthWest Place. See you soon!
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 615
     _text:
@@ -1263,7 +1263,7 @@ MonoBehaviour:
     - F19
     - Tuesday, 11.30am garbage collectors will come collect your stuff at SW Oak
       Street.
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 620
     _text:
@@ -1289,7 +1289,7 @@ MonoBehaviour:
     _text:
     - F19
     - Go to the one at 606 SE Madison Street, it opens at 6.47pm.
-  - _characterId: 1
+  - _characterId: 10
     _emotionSprite: N
     _time: 630
     _text:

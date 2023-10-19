@@ -50,10 +50,11 @@ public class GameManager : MonoBehaviour
     {
         if (!_switchTime)
         {
-            _timer += Time.deltaTime;
-
             if (_watchTime <= _maxWatchTime)
+            {
+                _timer += Time.deltaTime;
                 _watchTime += Time.deltaTime;
+            }
             else if (!_endingManager.HasEnded)
             {
                 _endingManager.HasEnded = true;
@@ -83,8 +84,8 @@ public class GameManager : MonoBehaviour
             //Debug.Log("input change");
         }
 
-        if (Input.GetKeyDown(KeyCode.C)) RewindTime();
-        if (Input.GetKeyDown(KeyCode.V)) ForwardTime();
+        //if (Input.GetKeyDown(KeyCode.C)) RewindTime();
+        //if (Input.GetKeyDown(KeyCode.V)) ForwardTime();
     }
 
     public void ChangeTime(bool dir)

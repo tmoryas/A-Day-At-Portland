@@ -21,10 +21,12 @@ public class InputManager : MonoBehaviour, IInputManager
 
 
     [Header("Rotary Encoder")]
+    private bool _unlockChangeTime;
     private int _actualTurn = -1;
     private int _lastStep = 0;
     private bool _clockwise = false;
     private Action<bool> _OnTurnDoneEvent;
+    public bool UnlockChangeTime {set => _unlockChangeTime = value; }
     public Action<bool> OnTurnDoneEvent { get => _OnTurnDoneEvent; set => _OnTurnDoneEvent = value; }
 
     private void Start()
@@ -40,32 +42,35 @@ public class InputManager : MonoBehaviour, IInputManager
 
     void DataReceived(string data, UduinoDevice board)
     {
-        int step = Int32.Parse(data);
-
-        if(step % 4 == 0)
+        if (_unlockChangeTime)
         {
-            if (step > _lastStep && _clockwise)
+            int step = Int32.Parse(data);
+
+            if(step % 4 == 0)
             {
-                //Debug.Log("ANTI HORAIRE");
-                _clockwise = false;
-                _actualTurn = 0;
-            }
-            else if(step < _lastStep && !_clockwise)
-            {
-                //Debug.Log("HORAIRE");
-                _clockwise = true;
-                _actualTurn = 0;
+                if (step > _lastStep && _clockwise)
+                {
+                    //Debug.Log("ANTI HORAIRE");
+                    _clockwise = false;
+                    _actualTurn = 0;
+                }
+                else if(step < _lastStep && !_clockwise)
+                {
+                    //Debug.Log("HORAIRE");
+                    _clockwise = true;
+                    _actualTurn = 0;
+                }
+
+                _lastStep = step;
+               _actualTurn++;
             }
 
-            _lastStep = step;
-           _actualTurn++;
-        }
-
-        if(Math.Abs(_actualTurn) >= 20)
-        {
-            _actualTurn = 0;
-            //Send Sens
-            _OnTurnDoneEvent.Invoke(_clockwise);
+            if(Math.Abs(_actualTurn) >= 20)
+            {
+                _actualTurn = 0;
+                //Send Sens
+                _OnTurnDoneEvent.Invoke(_clockwise);
+            }
         }
     }
 

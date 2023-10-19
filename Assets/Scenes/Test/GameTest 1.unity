@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &66687704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66687706}
+  - component: {fileID: 66687705}
+  m_Layer: 0
+  m_Name: Ending Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &66687705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66687704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ba11565abcd6c408f098c7fb006f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &66687706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66687704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248765287
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,6 +974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 697984936}
+  - component: {fileID: 697984937}
   m_Layer: 5
   m_Name: SavedClues
   m_TagString: Untagged
@@ -946,8 +991,8 @@ RectTransform:
   m_GameObject: {fileID: 697984935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1258833302}
   - {fileID: 581442313}
@@ -956,9 +1001,30 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 830, y: -6}
+  m_AnchoredPosition: {x: 1168, y: 67}
   m_SizeDelta: {x: -1820, y: -980}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &697984937
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697984935}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 985f0cbd40109cd40bd5abbca0308394, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &758341608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,14 +1526,20 @@ MonoBehaviour:
       Value: <color=#a21700>>
     - Key: <Metier>
       Value: <color=#4eb303>
-  clueFinal:
+  clueGoodEnding:
+    _serializedList: []
+  clueBadEnding:
+    _serializedList: []
+  bannerDico:
     _serializedList:
-    - Key: <Date>
-      Value: "5 d\xE9cembre"
-    - Key: <Lieu>
-      Value: Bastille
-    - Key: <Metier>
-      Value: boucher
+    - Key: 0
+      Value: {fileID: 1258833301}
+    - Key: 1
+      Value: {fileID: 581442312}
+    - Key: 2
+      Value: {fileID: 1092585161}
+    - Key: 3
+      Value: {fileID: 1258833301}
 --- !u!1 &868378832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,7 +2400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 345}
+  m_AnchoredPosition: {x: -390, y: 345}
   m_SizeDelta: {x: 568, y: 299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258833303
@@ -2400,6 +2472,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentMap: {fileID: 11400000, guid: b50e6658781d8c741a44eafcc0a2f0a2, type: 2}
   _maxPorts: 4
+  bannerMoveDistance: 350
+  bannerMoveSpeed: 0.08
   inputToClue:
     _serializedList:
     - Key: 110
@@ -2896,7 +2970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132, y: -1}
+  m_AnchoredPosition: {x: -119, y: -1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447476561
@@ -3164,6 +3238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d90af6336c191147bc52a82b58d85cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rewindEffect: {fileID: 0}
+  _forwardEffect: {fileID: 0}
+  _watch: {fileID: 0}
   _delay: 10
 --- !u!4 &1513205277
 Transform:
@@ -3519,7 +3596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -2}
+  m_AnchoredPosition: {x: 20, y: -2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1950319200
@@ -3828,6 +3905,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1621623532}
   inputManager: {fileID: 1268473752}
   baliseGetter: {fileID: 854840149}
+  endingManager: {fileID: 66687705}
 --- !u!114 &2080168487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4031,5 +4109,6 @@ SceneRoots:
   - {fileID: 1268473753}
   - {fileID: 1621623531}
   - {fileID: 854840150}
+  - {fileID: 66687706}
   - {fileID: 1218406981}
   - {fileID: 1934363808}

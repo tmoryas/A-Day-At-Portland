@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Inject] private DialogDatabase _dialogDB;
     [Inject] private DialogManager _dialogueManager;
     [Inject] private IInputManager _inputManager;
+    [Inject] private EndingManager _endingManager;
 
     [SerializeField] private CanvasGroup _rewindEffect;
     [SerializeField] private CanvasGroup _forwardEffect;
@@ -51,8 +52,13 @@ public class GameManager : MonoBehaviour
         {
             _timer += Time.deltaTime;
 
-            //if(_watchTime <= _maxWatchTime)
+            if (_watchTime <= _maxWatchTime)
                 _watchTime += Time.deltaTime;
+            else if (!_endingManager.HasEnded)
+            {
+                _endingManager.HasEnded = true;
+                _endingManager.CheckWin();
+            }
             _watch.eulerAngles = new Vector3(0, 0, _watchTime * 180 / _maxWatchTime);
         }
 
@@ -80,10 +86,12 @@ public class GameManager : MonoBehaviour
 
     public void ChangeTime(bool dir)
     {
-        if (dir)
-            ForwardTime();
-        else
-            RewindTime();
+        if(!_endingManager.GoodEnding){
+            if (dir && !_endingManager.HasEnded)
+                ForwardTime();
+            else
+                RewindTime();
+        }
     }
 
     private void ForwardTime()
@@ -105,6 +113,7 @@ public class GameManager : MonoBehaviour
 
         _watchTime = 0;
         _dialogueManager.ResetDialogData();
+        if (_endingManager.HasEnded) _endingManager.HasEnded = false;
         _rewindCoroutine = StartCoroutine(SwitchTime(0, _rewindEffect));
     }
 

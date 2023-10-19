@@ -41,7 +41,8 @@ public class CluesDictionaries : MonoBehaviour
 
     };
 
-    [SerializeField] private SerializedDictionary<string, string> clueFinal;
+    [SerializeField] private SerializedDictionary<CluesEnum, string> clueGoodEnding;
+    [SerializeField] private SerializedDictionary<CluesEnum, string> clueBadEnding;
 
     private SerializedDictionary<CluesEnum, string> availableClues = new SerializedDictionary<CluesEnum, string>()
     {
@@ -59,6 +60,8 @@ public class CluesDictionaries : MonoBehaviour
         { CluesEnum.Heure, ""}
     };
 
+    [SerializeField] private SerializedDictionary<FamiliesEnum, GameObject> bannerDico = new SerializedDictionary<FamiliesEnum, GameObject>();
+
 
 
 
@@ -66,5 +69,7 @@ public class CluesDictionaries : MonoBehaviour
     public Dictionary<CluesEnum, string> SavedClues { get => savedClues; }
     public Dictionary<string, CluesEnum> ClueEnumName { get => clueEnumName; }
     public Dictionary<string, string> ClueColorsString { get => clueColorsString; }
-    public Dictionary<string, string> ClueFinal { get => clueFinal; }
+    public Dictionary<CluesEnum, string> ClueGoodEnding { get => clueGoodEnding; }
+    public Dictionary<CluesEnum, string> ClueBadEnding { get => clueBadEnding; }
+    public Dictionary<FamiliesEnum, GameObject> BannerDico { get => bannerDico; }
 }

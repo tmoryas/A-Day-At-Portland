@@ -29,6 +29,9 @@ public class AudioManager : MonoBehaviour
                 DicoActualSound.Add(s.ActualSound, new List<Sound>());
             }
             DicoActualSound[s.ActualSound].Add(s);
+
+            if (s.AtStart)
+                Play(s.Name);
         }
     }
 

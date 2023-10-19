@@ -52,6 +52,13 @@ public class DialogManager : MonoBehaviour
             _characterSprite[i].LightEffect.sprite = _spriteEteint.LightEffect;
     }
 
+    public void ForwardDialogData(int time)
+    {
+        _dialogDB.DialogQueue = new Queue<DialogData>(_dialogDB.DialogQueue.Where(dialog => dialog.Time >= time).OrderBy(d => d.Time).ToList());
+        for (int i = 1; i < 11; i++)
+            _characterSprite[i].LightEffect.sprite = _spriteEteint.LightEffect;
+    }
+
     public void GetNextDialog(int time)
     {
         foreach (DialogData data in _actualDialog.Values)
@@ -83,7 +90,7 @@ public class DialogManager : MonoBehaviour
                 || (_characterTalkingDic[i] && !inputPressed.Contains(i) && _actualDialog.ContainsKey(i)))
             {
                 // Close Bubble
-                Debug.Log("Close");
+                //Debug.Log("Close");
 
                 if (_actualBubbleObjPos[i].Item1 != null)
                 {
@@ -102,7 +109,7 @@ public class DialogManager : MonoBehaviour
             else if(!_characterTalkingDic[i] && inputPressed.Contains(i) && _actualDialog.ContainsKey(i))
             {
                 // Open Bubble
-                Debug.Log("Open");
+                //Debug.Log("Open");
 
                 (GameObject, BubblePosState) bubbleData = GetRightBubble(i);
                 
@@ -121,7 +128,7 @@ public class DialogManager : MonoBehaviour
             else if(_characterTalkingDic[i] && inputPressed.Contains(i) && _actualDialog.ContainsKey(i) && forcedMaj)
             {
                 // MAJ Text
-                Debug.Log("MAJ");
+                //Debug.Log("MAJ");
 
                 _actualBubbleObjPos[i].Item1.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
             }

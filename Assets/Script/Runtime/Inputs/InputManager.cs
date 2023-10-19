@@ -46,9 +46,9 @@ public class InputManager : MonoBehaviour, IInputManager
         if (previousClue != selectedClue && selectedClue != CluesDictionaries.FamiliesEnum.Rien)
         {
             _baliseGetter.CluesDictionaries.BannerDico[previousClue].transform.
-                DOMoveX(_baliseGetter.CluesDictionaries.BannerDico[previousClue].transform.position.x + bannerMoveDistance, 0.15f).SetEase(Ease.OutCubic);
+                DOMoveX(_baliseGetter.CluesDictionaries.BannerDico[previousClue].transform.position.x + bannerMoveDistance, bannerMoveSpeed).SetEase(Ease.OutCubic);
             _baliseGetter.CluesDictionaries.BannerDico[selectedClue].transform.
-                DOMoveX(_baliseGetter.CluesDictionaries.BannerDico[selectedClue].transform.position.x - bannerMoveDistance, 0.15f).SetEase(Ease.OutCubic);
+                DOMoveX(_baliseGetter.CluesDictionaries.BannerDico[selectedClue].transform.position.x - bannerMoveDistance, bannerMoveSpeed).SetEase(Ease.OutCubic);
             previousClue = selectedClue;
         }
         if (Input.GetKeyDown(_currentMap.LeverKey)) _baliseGetter.SaveClue(selectedClue);

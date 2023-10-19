@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &66687704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66687706}
+  - component: {fileID: 66687705}
+  m_Layer: 0
+  m_Name: Ending Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &66687705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66687704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ba11565abcd6c408f098c7fb006f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &66687706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66687704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248765287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,14 +1526,10 @@ MonoBehaviour:
       Value: <color=#a21700>>
     - Key: <Metier>
       Value: <color=#4eb303>
-  clueFinal:
-    _serializedList:
-    - Key: <Date>
-      Value: "5 d\xE9cembre"
-    - Key: <Lieu>
-      Value: Bastille
-    - Key: <Metier>
-      Value: boucher
+  clueGoodEnding:
+    _serializedList: []
+  clueBadEnding:
+    _serializedList: []
   bannerDico:
     _serializedList:
     - Key: 0
@@ -3198,6 +3238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d90af6336c191147bc52a82b58d85cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rewindEffect: {fileID: 0}
+  _forwardEffect: {fileID: 0}
+  _watch: {fileID: 0}
   _delay: 10
 --- !u!4 &1513205277
 Transform:
@@ -3862,6 +3905,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 1621623532}
   inputManager: {fileID: 1268473752}
   baliseGetter: {fileID: 854840149}
+  endingManager: {fileID: 66687705}
 --- !u!114 &2080168487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4065,5 +4109,6 @@ SceneRoots:
   - {fileID: 1268473753}
   - {fileID: 1621623531}
   - {fileID: 854840150}
+  - {fileID: 66687706}
   - {fileID: 1218406981}
   - {fileID: 1934363808}

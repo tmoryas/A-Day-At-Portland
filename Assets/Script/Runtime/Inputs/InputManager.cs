@@ -1,15 +1,13 @@
 using AYellowpaper.SerializedCollections;
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
+using Uduino;
 using UnityEngine;
 using Zenject;
 
 public class InputManager : MonoBehaviour, IInputManager
 {
     [Inject] private BaliseGetter _baliseGetter;
-    [Inject] private DialogManager _dialogManager;
     [SerializeField] private InputMap _currentMap;
     private Dictionary<KeyCode, int> portToCharaID = new Dictionary<KeyCode, int>();
     private List<int> portToCharaIDs;
@@ -22,12 +20,52 @@ public class InputManager : MonoBehaviour, IInputManager
     public List<int> PortToCharaIDs => portToCharaIDs;
 
 
+    [Header("Rotary Encoder")]
+    private int _actualTurn = -1;
+    private int _lastStep = 0;
+    private bool _clockwise = false;
+    private Action<bool> _OnTurnDoneEvent;
+    public Action<bool> OnTurnDoneEvent { get => _OnTurnDoneEvent; set => _OnTurnDoneEvent = value; }
+
     private void Start()
     {
+        UduinoManager.Instance.OnDataReceived += DataReceived;
+
         int i = 1;
         foreach (KeyCode k in _currentMap.PortKeys)
         {
             portToCharaID.Add(k, i++);
+        }
+    }
+
+    void DataReceived(string data, UduinoDevice board)
+    {
+        int step = Int32.Parse(data);
+
+        if(step % 4 == 0)
+        {
+            if (step > _lastStep && _clockwise)
+            {
+                //Debug.Log("ANTI HORAIRE");
+                _clockwise = false;
+                _actualTurn = 0;
+            }
+            else if(step < _lastStep && !_clockwise)
+            {
+                //Debug.Log("HORAIRE");
+                _clockwise = true;
+                _actualTurn = 0;
+            }
+
+            _lastStep = step;
+           _actualTurn++;
+        }
+
+        if(Math.Abs(_actualTurn) >= 20)
+        {
+            _actualTurn = 0;
+            //Send Sens
+            _OnTurnDoneEvent.Invoke(_clockwise);
         }
     }
 

@@ -15,16 +15,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CanvasGroup _rewindEffect;
     [SerializeField] private CanvasGroup _forwardEffect;
 
+    [Header("Watch")]
     [SerializeField] private RectTransform _watch;
     private float _watchTime;
     private float _maxWatchTime;
 
+    [Header("Game Loop")]
     private float _timer;
     [SerializeField] private int _delay;
     private int _minSlot = 0;
     private int _hourSlot = 0;
 
-    private bool switchTime;
+    [Header("Rewind/Forward")]
+    private bool _switchTime;
+    private Coroutine _forwardCoroutine;
+    private Coroutine _rewindCoroutine;
 
     private List<int> _inputs = new List<int>();
 
@@ -36,11 +41,13 @@ public class GameManager : MonoBehaviour
         _dialogueManager.GetNextDialog(_hourSlot + _minSlot);
 
         _maxWatchTime = RealSecondCalcul(_dialogDB.DialogueDataList[_dialogDB.DialogueDataList.Count - 1].Time);
+
+        _inputManager.OnTurnDoneEvent += ChangeTime;
     }
 
     void Update()
     {
-        if (!switchTime)
+        if (!_switchTime)
         {
             _timer += Time.deltaTime;
 
@@ -69,19 +76,36 @@ public class GameManager : MonoBehaviour
             _dialogueManager.UpdateDialog(_inputs);
             //Debug.Log("input change");
         }
+    }
 
-        if (Input.GetKeyDown(_inputManager.CurrentMap.ForwardKey))
-        {
-            _watchTime = RealSecondCalcul(_hourSlot + 100);
-            _dialogueManager.ForwardDialogData(_hourSlot + 100);
-            StartCoroutine(SwitchTime(_hourSlot + 100, _forwardEffect));
-        }
-        else if (Input.GetKeyDown(_inputManager.CurrentMap.BackwardKey))
-        {
-            _watchTime = 0;
-            _dialogueManager.ResetDialogData();
-            StartCoroutine(SwitchTime(0, _rewindEffect));
-        }
+    public void ChangeTime(bool dir)
+    {
+        if (dir)
+            ForwardTime();
+        else
+            RewindTime();
+    }
+
+    private void ForwardTime()
+    {
+        if (_rewindCoroutine != null)
+            return;
+
+        if(_forwardCoroutine != null)
+            StopCoroutine(_forwardCoroutine);
+
+        _watchTime = RealSecondCalcul(_hourSlot + 100);
+        _dialogueManager.ForwardDialogData(_hourSlot + 100);
+        _forwardCoroutine = StartCoroutine(SwitchTime(_hourSlot + 100, _forwardEffect));
+    }
+
+    private void RewindTime()
+    {
+        if(_forwardCoroutine != null || _rewindCoroutine != null) return;
+
+        _watchTime = 0;
+        _dialogueManager.ResetDialogData();
+        _rewindCoroutine = StartCoroutine(SwitchTime(0, _rewindEffect));
     }
 
     private IEnumerator SwitchTime(int nextTime, CanvasGroup effect)
@@ -93,7 +117,7 @@ public class GameManager : MonoBehaviour
         _dialogueManager.ActualDialog.Clear();
         _dialogueManager.UpdateDialog(_inputs);
 
-        switchTime = true;
+        _switchTime = true;
 
         effect.gameObject.SetActive(true);
         effect.DOFade(1, 0.3f);
@@ -105,7 +129,10 @@ public class GameManager : MonoBehaviour
             effect.gameObject.SetActive(false);
             _dialogueManager.GetNextDialog(_hourSlot + _minSlot);
             _dialogueManager.UpdateDialog(_inputs);
-            switchTime = false;
+            _switchTime = false;
+
+            _rewindCoroutine = null;
+            _forwardCoroutine = null;
         });
     }
 

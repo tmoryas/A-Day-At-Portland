@@ -9,7 +9,8 @@ public class Sound
     [SerializeField, Range(0f, 1f)] private float volume = 0.9f;
     [SerializeField, Range(.1f, 3f)] private float pitch = 1f;
     [SerializeField] private bool loop;
-    
+    [SerializeField] private bool atStart;
+
     [SerializeField] private AudioMixerGroup audioMixer;
 
     private AudioSource source;
@@ -21,9 +22,11 @@ public class Sound
     public float Volume => volume;
     public float Pitch => pitch;
     public bool Loop => loop;
+    public bool AtStart => atStart;
     public AudioMixerGroup AudioMixer => audioMixer;
 
     public AudioSource Source { get => source; set => source = value; }
     public SoundState ActualSound => actualSound;
+
     #endregion
 }

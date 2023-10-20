@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
             _dialogueManager.UpdateDialog(_inputs);
             //Debug.Log("input change");
         }
+
+        if (Input.GetKeyDown(KeyCode.C)) RewindTime();
+        if (Input.GetKeyDown(KeyCode.V)) ForwardTime();
     }
 
     public void ChangeTime(bool dir)
@@ -110,6 +113,10 @@ public class GameManager : MonoBehaviour
     private void RewindTime()
     {
         if(_forwardCoroutine != null || _rewindCoroutine != null) return;
+
+        _endingManager.GoodEndingGO.SetActive(false);
+        _endingManager.BadEndingGO.SetActive(false);
+        _endingManager.MidEndingGO.SetActive(false);
 
         _watchTime = 0;
         _dialogueManager.ResetDialogData();

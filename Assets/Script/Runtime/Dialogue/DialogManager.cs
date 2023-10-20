@@ -1,4 +1,5 @@
 using AYellowpaper.SerializedCollections;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -95,8 +96,13 @@ public class DialogManager : MonoBehaviour
                 if (_actualBubbleObjPos[i].Item1 != null)
                 {
                     _baliseGetter.DeleteAvailableClue(i);
-                    Destroy(_actualBubbleObjPos[i].Item1.BubbleRoot);
 
+                    GameObject bubbleRootTemp = _actualBubbleObjPos[i].Item1.BubbleRoot;
+                    bubbleRootTemp.transform.DOScale(Vector3.zero, 0.1f).OnComplete(() => 
+                    { 
+                        Destroy(bubbleRootTemp); 
+                    });
+            
                     _spaceUse[_actualBubbleObjPos[i].Item2] = false;
                     _actualBubbleObjPos.Remove(i);
 
@@ -117,7 +123,10 @@ public class DialogManager : MonoBehaviour
 
                 BubbleProxy bubble = Instantiate(bubbleData.Item1, _characterTransform[i].position, Quaternion.identity, canvas).GetComponent<BubbleProxy>();
                 _actualBubbleObjPos.Add(i, (bubble, bubbleData.Item2));
-                
+
+                bubble.BubbleRoot.transform.localScale = Vector3.zero;
+                bubble.BubbleRoot.transform.DOScale(Vector3.one, 0.1f);
+
                 bubble.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
 
                 _characterSprite[i].Background.sprite = _spriteAllumer.Background;

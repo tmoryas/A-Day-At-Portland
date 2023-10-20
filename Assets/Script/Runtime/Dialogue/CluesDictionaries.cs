@@ -41,8 +41,20 @@ public class CluesDictionaries : MonoBehaviour
 
     };
 
-    [SerializeField] private SerializedDictionary<CluesEnum, string> clueGoodEnding;
-    [SerializeField] private SerializedDictionary<CluesEnum, string> clueBadEnding;
+    [SerializeField] private SerializedDictionary<CluesEnum, string> clueGoodEnding = new SerializedDictionary<CluesEnum, string>()
+    {
+        { CluesEnum.Date, ""},
+        { CluesEnum.Lieu, ""},
+        { CluesEnum.Metier, ""},
+        { CluesEnum.Heure, ""}
+    };
+    [SerializeField] private SerializedDictionary<CluesEnum, string> clueBadEnding = new SerializedDictionary<CluesEnum, string>()
+    {
+        { CluesEnum.Date, ""},
+        { CluesEnum.Lieu, ""},
+        { CluesEnum.Metier, ""},
+        { CluesEnum.Heure, ""}
+    };
 
     private SerializedDictionary<CluesEnum, string> availableClues = new SerializedDictionary<CluesEnum, string>()
     {

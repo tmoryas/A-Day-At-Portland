@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: EditorInputs
   m_EditorClassIdentifier: 
   portKeys: 71000000770000006500000072000000740000006100000073000000640000006600000067000000
-  clueKeys: 6f0000003b0000002c000000
+  clueKeys: 77000000620000006e000000
   leverKey: 27
+  backwardKey: 0
+  forwardKey: 0

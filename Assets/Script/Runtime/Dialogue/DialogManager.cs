@@ -38,6 +38,8 @@ public class DialogManager : MonoBehaviour
 
     public Dictionary<int, DialogData> ActualDialog { get => _actualDialog; }
 
+    [SerializeField] private Color colorEteint;
+
     void Awake()
     {
         ResetDialogData();
@@ -107,6 +109,7 @@ public class DialogManager : MonoBehaviour
                     _actualBubbleObjPos.Remove(i);
 
                     _characterSprite[i].Background.sprite = _spriteEteint.Background;
+                    _characterSprite[i].Character.color = colorEteint;
                     _characterSprite[i].Frame.sprite = _spriteEteint.Frame;
 
                     _characterTalkingDic[i] = false;
@@ -130,6 +133,7 @@ public class DialogManager : MonoBehaviour
                 bubble.TextComponent.text = _baliseGetter.CleanSentence(i, _actualDialog[i].Text[(int)_languageState]);
 
                 _characterSprite[i].Background.sprite = _spriteAllumer.Background;
+                _characterSprite[i].Character.color = Color.white;
                 _characterSprite[i].Frame.sprite = _spriteAllumer.Frame;
 
                 _characterTalkingDic[i] = true;

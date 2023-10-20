@@ -123,7 +123,7 @@ public class InputManager : MonoBehaviour, IInputManager
                 return inputToClue[k];
             }
         }
-        return CluesDictionaries.FamiliesEnum.Rien;
+        return selectedClue;
     }
 
     //private string ClueSave(string currentClue)

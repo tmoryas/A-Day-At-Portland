@@ -1,0 +1,1440 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022f90fd8bfbb94458ba6b6aec771f99, type: 3}
+  m_Name: 20-10_Database 2
+  m_EditorClassIdentifier: 
+  dialogueDataList:
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 5
+    _text:
+    - F1
+    - Hello darling, how are you this morning? I didn't get a chance to wish you
+      a good day!
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 5
+    _text:
+    - F19
+    - Hello Rose! How are you today?
+  - _characterId: 2
+    _emotionSprite: A
+    _time: 10
+    _text:
+    - F2
+    - Where are you?!
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 10
+    _text:
+    - F19
+    - Good. Thanks for asking. What can I do for you honey boy?
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 15
+    _text:
+    - F3
+    - At work! Where do you want me to be?
+  - _characterId: 7
+    _emotionSprite: J
+    _time: 15
+    _text:
+    - F19
+    - Hello baby boy, can you please do your job and call our favorite rascal please?
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 15
+    _text:
+    - F19
+    - The guys want to hold a meeting.
+  - _characterId: 2
+    _emotionSprite: A
+    _time: 20
+    _text:
+    - F4
+    - Are you sure you haven't gone to see your bimbo?
+  - _characterId: 8
+    _emotionSprite: J
+    _time: 20
+    _text:
+    - F19
+    - "Anyone listening? I\u2019ll be busy soon, you know what I mean right?"
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 20
+    _text:
+    - F19
+    - Hey Marvin! I wanna buy stuff!
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 20
+    _text:
+    - F19
+    - "Of course I\u2019m\u2026 I\u2019m on it! Don\u2019t worry, I absolutely remember
+      who to call and what to say to them\u2026\t"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 20
+    _text:
+    - F19
+    - Can you have a room scheduled for <Date> Monday </> at <Heure> 1p.m</>?
+  - _characterId: 1
+    _emotionSprite: A
+    _time: 25
+    _text:
+    - F5
+    - "You left your agenda at home! You were at <Lieu> Nancy\u2019s </> last night!"
+  - _characterId: 8
+    _emotionSprite: J
+    _time: 25
+    _text:
+    - F19
+    - "Take some time to listen to your favorite <Metier> bartender</>, I know you\u2019re
+      on at this hour Supercop."
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 25
+    _text:
+    - F19
+    - "Roy! You know you shouldn\u2019t call me when I\u2019m at home!"
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 25
+    _text:
+    - F19
+    - I hope so darling! We really need to make this trade.
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 25
+    _text:
+    - F19
+    - Sure no problem, you boys will want to have companies?
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 30
+    _text:
+    - F6
+    - "If you want to, you can call Steven! He will tell you that I\u2019m at work."
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 30
+    _text:
+    - F19
+    - "Come on! It\u2019s been months since you gave news!"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 30
+    _text:
+    - F19
+    - Yes, in order to be discreet but we need girls that clammed up.
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 35
+    _text:
+    - F7
+    - "Not sure I can believe him either\u2026 And what is that mysterious 'meeting'?"
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 35
+    _text:
+    - F19
+    - "I\u2019m not your god damn supplier! Ask someone else and leave me in peace!"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 35
+    _text:
+    - F19
+    - 'Five should be good: you, Rachel & three others good at their job.'
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 40
+    _text:
+    - F8
+    - " At... <Heure> 6 pm</>? And there\u2019s another one\u2026        "
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 40
+    _text:
+    - F19
+    - "But man! I\u2019m your favorite client, you can do this for me!"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 40
+    _text:
+    - F19
+    - Alright. See you soon.
+  - _characterId: 1
+    _emotionSprite: A
+    _time: 45
+    _text:
+    - F9
+    - "We\u2019ll talk about this later. In the meanwhile leave my agenda alone."
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 45
+    _text:
+    - F19
+    - Listen, small customers like you, we do not care!
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 50
+    _text:
+    - F19
+    - You do not make our business flourish. So forget this number!
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 55
+    _text:
+    - F19
+    - "Sure sure, but you do have something right? Because The Dukes\u2026 they do!"
+  - _characterId: 6
+    _emotionSprite: J
+    _time: 55
+    _text:
+    - F19
+    - "Hello! The <Lieu> Sawyer\u2019s Perfumery </> is offering you 42% off on our
+      secret collection at <Heure> 2 pm</>!"
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 100
+    _text:
+    - F10
+    - Hello, is it officer Merrick? Everly Gray speaking
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 100
+    _text:
+    - F19
+    - "The Dukes know nothing about business! \u2026 Fine"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 100
+    _text:
+    - F19
+    - A secret collection?
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 105
+    _text:
+    - F11
+    - " I call you because I\u2019ve got doubts\u2026 about my husband's activities,"
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 105
+    _text:
+    - F19
+    - "If you\u2019re so eager for something, go wait for me at the usual spot. I\u2019ll
+      be there at <Heure> 11</>."
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 110
+    _text:
+    - F12
+    - "Ms. Gray\u2026 what you\u2019re saying is alarming. What makes you say that?"
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 110
+    _text:
+    - F19
+    - "Perfect! That\u2019s why you\u2019re THE man!"
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 110
+    _text:
+    - F19
+    - Yeah! You know! The secret! Whiskey! No?
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 115
+    _text:
+    - F13
+    - I prefer not to talk about it on the phone but I may have information
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 115
+    _text:
+    - F19
+    - '*shhh* When is *shhh* 1 pm? Sure *shhh*'
+  - _characterId: 10
+    _emotionSprite: A
+    _time: 115
+    _text:
+    - F19
+    - ' I have no idea what you are talking about. Are you making fun of me?'
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 120
+    _text:
+    - F14
+    - "about multiple rendez-vous he does during his work and doesn\u2019t want to
+      talk about."
+  - _characterId: 6
+    _emotionSprite: C
+    _time: 120
+    _text:
+    - F19
+    - "Oh\u2026 I think I just called the wrong person, sorry ma'am, have a good
+      evening!"
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 125
+    _text:
+    - F15
+    - Listen Miss, I accept to talk about it but you need to be sure about this information.
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 125
+    _text:
+    - F19
+    - 'The mic was on a minute ago? Sorry Supercop! Forget about it, nothing important. '
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 130
+    _text:
+    - F16
+    - "I know\u2026 do you think we could meet at <Heure> noon</>?"
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 130
+    _text:
+    - F19
+    - "Eh man. I\u2019ve got the information you wanted. It will happen <Date> saturday</>."
+  - _characterId: 6
+    _emotionSprite: S
+    _time: 130
+    _text:
+    - F19
+    - Molly!!! I think I just revealed our secret to the wrong person!!
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 130
+    _text:
+    - F19
+    - Milty! Nancy told me that you would need <Metier> moving trucks </> <Date>
+      friday</>!
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 135
+    _text:
+    - F17
+    - No problem. Does <Lieu> the restaurant at NorthWest Place </> sound good to
+      you?
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 135
+    _text:
+    - F19
+    - Roy I need the full schedule. This is important.
+  - _characterId: 7
+    _emotionSprite: A
+    _time: 135
+    _text:
+    - F19
+    - What are you saying you stupid rat?
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 135
+    _text:
+    - F19
+    - "You\u2019re finally going to move to another apartment?"
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 140
+    _text:
+    - F18
+    - Yes, perfect.
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 140
+    _text:
+    - F19
+    - "Yea, yea sorry, I\u2019m kind of thinking about other stuff\u2026"
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 140
+    _text:
+    - F19
+    - "I called the person for the trade like you asked. But she didn\u2019t understand
+      me!"
+  - _characterId: 9
+    _emotionSprite: S
+    _time: 140
+    _text:
+    - F19
+    - Rose careful, people might not know.
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 145
+    _text:
+    - F19
+    - So, <Heure> 4:45 </> seems to be the right time but be careful.
+  - _characterId: 7
+    _emotionSprite: S
+    _time: 145
+    _text:
+    - F19
+    - She?! Our little shark is not a woman! Do you really have the right number?!
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 145
+    _text:
+    - F19
+    - So will I be able to come see you?
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 150
+    _text:
+    - F19
+    - Okay. Should I know something else?
+  - _characterId: 6
+    _emotionSprite: C
+    _time: 150
+    _text:
+    - F19
+    - "I think I may have missed a number\u2026 Won\u2019t happen again, sorry!"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 150
+    _text:
+    - F19
+    - "You got it wrong Rose, I\u2019m not moving. Those trucks are not here for
+      that.\t"
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 155
+    _text:
+    - F19
+    - Except the fact that I missed working with you? Nah! Nothing special!
+  - _characterId: 7
+    _emotionSprite: S
+    _time: 155
+    _text:
+    - F19
+    - "You didn\u2019t reveal our identity right? Imagine she called the <Metier>
+      police</>\u2026"
+  - _characterId: 10
+    _emotionSprite: J
+    _time: 155
+    _text:
+    - F19
+    - "Oh\u2026 Well, at least you are not moving farther away."
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 200
+    _text:
+    - F19
+    - "Great\u2026 Well, continue like that, I\u2019ll contact you if\u2026"
+  - _characterId: 6
+    _emotionSprite: S
+    _time: 200
+    _text:
+    - F19
+    - "Oh no\u2026 Don\u2019t worry about this!"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 200
+    _text:
+    - F19
+    - Speaking of, I have some free time this afternoon, you wanted to have a chat
+      with me. Should we meet at the restaurant at <Lieu> NorthWest Place</>?
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 205
+    _text:
+    - F19
+    - "Oh wait! The Dukes! I don\u2019t know what is it but I saw them going in and
+      out of a house..."
+  - _characterId: 7
+    _emotionSprite: A
+    _time: 205
+    _text:
+    - F19
+    - Well, hurry! This needs to be done before <Heure> 3 pm</>!!
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 210
+    _text:
+    - F19
+    - "<Lieu> 900 SW 4th Avenue</>. But this doesn\u2019t make any sense, it\u2019s
+      just a regular house!"
+  - _characterId: 9
+    _emotionSprite: J
+    _time: 210
+    _text:
+    - F19
+    - You know me! I do like this one.
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 215
+    _text:
+    - F19
+    - If this has something to do with The Dukes,,,
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 215
+    _text:
+    - F19
+    - I just need to go to <Lieu> Bidwell Mariott Hotel </> first, some stuff came
+      up.
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 220
+    _text:
+    - F19
+    - "It\u2019s not just a regular house. Ask around."
+  - _characterId: 6
+    _emotionSprite: J
+    _time: 220
+    _text:
+    - F19
+    - Hello! We are offering you 42% off on our Whiskey collection!
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 220
+    _text:
+    - F19
+    - Do you want back up?
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 225
+    _text:
+    - F19
+    - 'Oh and last intel: <Metier> mailmen </> are on their way.'
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 225
+    _text:
+    - F19
+    - Ok Sir...? Can I ask you who you are?
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 225
+    _text:
+    - F19
+    - From you? No. But go to <Lieu> 2636 NE Sandy Boulevard</>, prepare the place,
+      I might need it.
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 230
+    _text:
+    - F19
+    - Roger that, thanks.
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 230
+    _text:
+    - F19
+    - "Oh absolutely\u2026 Euh wait, who are you first?"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 230
+    _text:
+    - F19
+    - "I\u2019ll see you at the restaurant at <Heure> 4.35</>."
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 235
+    _text:
+    - F19
+    - You are calling a member of the <Metier> police </> sir.
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 235
+    _text:
+    - F19
+    - Hello, am I calling the <Lieu> Sawyer's Perfumery</>?
+  - _characterId: 6
+    _emotionSprite: S
+    _time: 240
+    _text:
+    - F19
+    - '*clic*'
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 240
+    _text:
+    - F19
+    - "Sure Ma\u2019am! How can I help you?"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 245
+    _text:
+    - F19
+    - I got a strange call coming from you. Talking about a new collection.
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 250
+    _text:
+    - F19
+    - Hello, Mr. Gray? Officer Merrick speaking.
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 250
+    _text:
+    - F19
+    - "Hello! \u2026 Can I ask you something?"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 250
+    _text:
+    - F19
+    - ' Is it possible to get some?'
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 255
+    _text:
+    - F19
+    - I have some questions for you about the appointments you have today.
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 255
+    _text:
+    - F19
+    - Sure? Go ahead.
+  - _characterId: 7
+    _emotionSprite: J
+    _time: 255
+    _text:
+    - F19
+    - Well yes, happy to see that some people heard of it! How many perfumes do you
+      want?
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 300
+    _text:
+    - F19
+    - Officer Merrick? I would gladly answer your questions but sadly I am a busy
+      man!
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 300
+    _text:
+    - F19
+    - "It\u2019s a busy day, never saw so many trouble boys in an afternoon."
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 300
+    _text:
+    - F19
+    - Roy! I warned you, do not do stupid things. Like associating with The Dukes!
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 300
+    _text:
+    - F19
+    - "That might seem strange but, just to be sure\u2026 Are you a member of a gang?"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 300
+    _text:
+    - F19
+    - "I\u2019m a huge fan of your job, it always suits me well. Around twenty should
+      be good."
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 305
+    _text:
+    - F19
+    - "You\u2019ll get an appointment by talking to my secretary."
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 305
+    _text:
+    - F19
+    - "Despite that I couldn\u2019t get anything serious, although I heard the big
+      shot will come to town."
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 305
+    _text:
+    - F19
+    - "Come on egg, I\u2019m a customer! Nothing forbids me to go to other sellers!"
+  - _characterId: 9
+    _emotionSprite: S
+    _time: 305
+    _text:
+    - F19
+    - Who are you and why are you asking this?!
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 305
+    _text:
+    - F19
+    - "What name and when Ma\u2019am?"
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 310
+    _text:
+    - F19
+    - "I\u2019ll make it easy for you, you\u2019re supposed to be visiting the <Lieu>
+      21st. Avenue factory</>? I'll be meeting you there."
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 310
+    _text:
+    - F19
+    - "Yes you can\u2019t! Whether I like it or not, you have worked for us and know
+      too much of our work."
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 310
+    _text:
+    - F19
+    - "Oh you know\u2026 Just to make sure I\u2019m talking to the right person."
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 310
+    _text:
+    - F19
+    - "Rose\u2026 and <Date> Wednesday please</>."
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 315
+    _text:
+    - F19
+    - "Dear Mr. Merrick\u2026 I appreciate your enthusiasm to meet me, but I have
+      a meeting at <Heure> 4</>."
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 315
+    _text:
+    - F19
+    - So stop any contact you may have with The Dukes.
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 315
+    _text:
+    - F19
+    - And maybe because of a little package and all.
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 315
+    _text:
+    - F19
+    - Good for me! See you soon Rose.
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 320
+    _text:
+    - F19
+    - "I assume that the <Metier> masonry </> industry is not something you\u2019ll
+      find very interesting."
+  - _characterId: 4
+    _emotionSprite: C
+    _time: 320
+    _text:
+    - F19
+    - 'Are you sure about that? I could learn valuable information. '
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 320
+    _text:
+    - F19
+    - "I may know stuff about gangs... But I don\u2019t remember anything about a
+      package."
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 320
+    _text:
+    - F19
+    - Thanks, see you soon.
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 325
+    _text:
+    - F19
+    - "So that\u2019s what your afternoon appointment is? Now that\u2019s curious
+      because..."
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 325
+    _text:
+    - F19
+    - For example, did you know that they have a meeting spot in a pizzeria? <Heure>
+      7p.m</>.
+  - _characterId: 6
+    _emotionSprite: J
+    _time: 325
+    _text:
+    - F19
+    - "Oh yes! It\u2019s because I haven\u2019t said that: \u201CWe are offering
+      you 42% off on our Whiskey collection\u201D!"
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 330
+    _text:
+    - F19
+    - all activity stopped in this factory last <Date> Monday </> thanks to our department.
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 330
+    _text:
+    - F19
+    - "I know it wasn\u2019t much, but you could still answer. You <Metier> cops
+      </> are supposed to follow a strict protocol, right?"
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 330
+    _text:
+    - F19
+    - 'I do not care. Listen and burn it in your memory: you are not a member of
+      Gold River.'
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 330
+    _text:
+    - F19
+    - "Wait\u2026 Are you a scammer?"
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 335
+    _text:
+    - F19
+    - Your love for <Metier> masonry </> might extend to abandoned buildings but
+      your intentions are still unclear, sir.
+  - _characterId: 8
+    _emotionSprite: S
+    _time: 335
+    _text:
+    - F19
+    - "Usually you give me a sign\u2026 or a kind word\u2026 usually\u2026 are you
+      in danger?!"
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 335
+    _text:
+    - F19
+    - "You\u2019re just a drunkard I gave too much credit to by mistake or pity."
+  - _characterId: 6
+    _emotionSprite: C
+    _time: 335
+    _text:
+    - F19
+    - What? No! Not at all!
+  - _characterId: 1
+    _emotionSprite: A
+    _time: 340
+    _text:
+    - F19
+    - "MERRICK!! Do you understand your position? You're still able to slander me
+      because I\u2019m a very patient man."
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 340
+    _text:
+    - F19
+    - "I\u2019m joking\u2026 keep an ear out for my next report."
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 340
+    _text:
+    - F19
+    - So now I just want you to deliver me the List and return to being a simple
+      alcoholic.
+  - _characterId: 9
+    _emotionSprite: A
+    _time: 340
+    _text:
+    - F19
+    - I have no idea what you want from me! Stop making me lose my time!
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 345
+    _text:
+    - F19
+    - Sir, you are making this harder on yourself. The more you refuse to help me,
+      the more I dig,
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 350
+    _text:
+    - F19
+    - "And the more I find information that you won\u2019t like to talk about. It
+      would be better for you to cooperate."
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 355
+    _text:
+    - F19
+    - "Fine. It seems that I can\u2019t dissuade you, let\u2019s start again on the
+      right track!"
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 400
+    _text:
+    - F19
+    - "We will meet today, at <Heure> 5 pm</>. I will be at <Lieu> Washington Park</>,
+      sitting next to a <Metier> florist\u2019s truck </>. Be there."
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 400
+    _text:
+    - F19
+    - So, you got the call?
+  - _characterId: 9
+    _emotionSprite: J
+    _time: 400
+    _text:
+    - F19
+    - Rose! I finally found a way out of this mess! They may finally be part of my
+      past!
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 405
+    _text:
+    - F19
+    - Understood sir. See you there.
+  - _characterId: 6
+    _emotionSprite: S
+    _time: 405
+    _text:
+    - F19
+    - "Yeah of course! Ahah\u2026"
+  - _characterId: 9
+    _emotionSprite: J
+    _time: 405
+    _text:
+    - F19
+    - Thanks for the stash! It was helpful.
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 410
+    _text:
+    - F19
+    - Well? What did he say?
+  - _characterId: 10
+    _emotionSprite: J
+    _time: 410
+    _text:
+    - F19
+    - "You\u2019re welcome. So? What happened?"
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 415
+    _text:
+    - F19
+    - "Mmh\u2026 He said <Heure> 8am </> and <Lieu> 65 Mark road Street</>\u2026"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 415
+    _text:
+    - F19
+    - I met this guy, George, he said he would help me be safe but that he needed
+      my help first with a guy helping the others.
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 420
+    _text:
+    - F19
+    - Ms. Gray, I will be meeting your husband in a couple of hours.
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 420
+    _text:
+    - F19
+    - "Are you sure? You seem hesitant\u2026"
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 425
+    _text:
+    - F19
+    - Depending on what I found, there could be consequences.
+  - _characterId: 8
+    _emotionSprite: J
+    _time: 425
+    _text:
+    - F19
+    - Sorry for being late! I'm gonna drop a juicy dime so you better listen closely.
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 425
+    _text:
+    - F19
+    - "No, don't worry! But you know what? I have to call you back. Important business!\t"
+  - _characterId: 10
+    _emotionSprite: S
+    _time: 425
+    _text:
+    - F19
+    - Are you sure you can trust him?
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 430
+    _text:
+    - F19
+    - I am conscious of that but it is my duty!
+  - _characterId: 8
+    _emotionSprite: J
+    _time: 430
+    _text:
+    - F19
+    - "South exit of <Lieu> Lone Fir Cemetery</>, this is the place of the next \u2018delivery\u2019."
+  - _characterId: 7
+    _emotionSprite: A
+    _time: 430
+    _text:
+    - F19
+    - What? Hey!
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 430
+    _text:
+    - F19
+    - 'I learned something in this line of work: we cannot really trust anyone. But
+      he does seem legit.'
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 435
+    _text:
+    - F19
+    - If my husband has indeed worked with criminals he must answer for his acts.
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 435
+    _text:
+    - F19
+    - "I hope it\u2019ll help you, Supercop."
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 435
+    _text:
+    - F19
+    - "George should be at <Lieu> Washington Park </> right now, I will be meeting
+      him as an extra help and then I\u2019ll leave Portland."
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 440
+    _text:
+    - F19
+    - "Thank you for your courage. Wait for me at <Lieu> Chester\u2019s restaurant
+      </> at around <Heure> 6 pm</>. "
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 440
+    _text:
+    - F19
+    - "He said something about <Metier> florists</>, I didn\u2019t understand\u2026"
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 445
+    _text:
+    - F19
+    - No, it is I who thank you officer. Thank you for believing in me.
+  - _characterId: 6
+    _emotionSprite: C
+    _time: 445
+    _text:
+    - F19
+    - "Please be the good one\u2026"
+  - _characterId: 10
+    _emotionSprite: C
+    _time: 445
+    _text:
+    - F19
+    - "So you\u2019re definitely leaving Portland? I\u2019m gonna miss you a bit\u2026"
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 450
+    _text:
+    - F19
+    - "But please do not be too hard on him! I just know\u2026 he must have had his
+      reasons."
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 450
+    _text:
+    - F19
+    - What?
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 450
+    _text:
+    - F19
+    - "I\u2019m sorry Rose but you will be accompanying me, at least until everything
+      is settled."
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 450
+    _text:
+    - F19
+    - Hi, how can I help you?
+  - _characterId: 3
+    _emotionSprite: N
+    _time: 455
+    _text:
+    - F19
+    - Do not worry, he will have the right for a proper judgment. Be at peace, see
+      you soon.
+  - _characterId: 6
+    _emotionSprite: J
+    _time: 455
+    _text:
+    - F19
+    - "Oh hello sir! I\u2019m here to remind you that we are offering you 42% off
+      on our Whiskey collection!\t"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 455
+    _text:
+    - F19
+    - "You are not safe in this city, it\u2019s only a question of time before they
+      know everything about both of us."
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 455
+    _text:
+    - F19
+    - "Hello, I\u2019ve heard about a new business at your perfumery, am I right?"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 500
+    _text:
+    - F19
+    - "\u2026 I will have to tell Nancy that I\u2019m taking vacations."
+  - _characterId: 7
+    _emotionSprite: J
+    _time: 500
+    _text:
+    - F19
+    - "Oh yeah sure! It\u2019s the <Date> Sunday </> collection, sent of violet and
+      hibiscus for\u2026"
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 505
+    _text:
+    - F19
+    - "Finally, you are calling! It\u2019s been hours!"
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 505
+    _text:
+    - F19
+    - "Go to <Lieu> Yeon Avenue train station</>, and I\u2019ll meet you there around
+      <Heure> 9p.m</>, everything should be over by this time."
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 505
+    _text:
+    - F19
+    - "No, I\u2019m talking about another business. Something with a W."
+  - _characterId: 6
+    _emotionSprite: C
+    _time: 510
+    _text:
+    - F19
+    - "Sorry, we had some\u2026 problems\u2026"
+  - _characterId: 7
+    _emotionSprite: S
+    _time: 510
+    _text:
+    - F19
+    - Can I ask who you are?
+  - _characterId: 2
+    _emotionSprite: N
+    _time: 515
+    _text:
+    - F19
+    - "Officer? I was waiting for you at the restaurant but you didn\u2019t come.
+      It's already <Heure> 7pm</>. "
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 515
+    _text:
+    - F19
+    - I hope it has nothing to do with our package.
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 515
+    _text:
+    - F19
+    - "Sure. But you will owe me a lot for what you\u2019ve put me through."
+  - _characterId: 8
+    _emotionSprite: N
+    _time: 515
+    _text:
+    - F19
+    - "Sure, Ann Pearce, bar keeper of the \u201C<Lieu>Spinner Shuttle</>\u201D.
+      And I\u2019m interested."
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 520
+    _text:
+    - F19
+    - "Is something happening? There\u2019s fire trucks around the park\u2026 Officer!
+      Please, tell me that everything is fine!"
+  - _characterId: 6
+    _emotionSprite: N
+    _time: 520
+    _text:
+    - F19
+    - "No! Don\u2019t worry about this, it\u2019s safe and sound!"
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 520
+    _text:
+    - F19
+    - "Oh, I see\u2026 Well for now it is unavailable. We are still\u2026 developing
+      it you know?"
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 525
+    _text:
+    - F19
+    - Glad to hear that. So be sure to be there at <Heure> 10am </> on <Lieu> 106
+      Fedora Boulevard </> <Date> sunday</>.
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 525
+    _text:
+    - F19
+    - "And we don\u2019t have enough for selling you something\u2026"
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 530
+    _text:
+    - F19
+    - ' A <Metier> dairy truck </> will be waiting for you.'
+  - _characterId: 8
+    _emotionSprite: C
+    _time: 530
+    _text:
+    - F19
+    - "That\u2019s a shame. I will call you back then. See ya."
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 535
+    _text:
+    - F19
+    - "Honey? I\u2019m sorry, I will be home late today. I still have a lot of work
+      to do so don\u2019t wait for me."
+  - _characterId: 6
+    _emotionSprite: J
+    _time: 535
+    _text:
+    - F19
+    - Ok everything is duly noted, see you in two days sir!
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 535
+    _text:
+    - F19
+    - "Rose, something unpredicted came up. I don\u2019t know what has become of
+      the cop but I know that I\u2019m far from being safe."
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 535
+    _text:
+    - F19
+    - "See you ma\u2019am."
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 540
+    _text:
+    - F19
+    - Everett? Why are you calling me? And... are you at work?
+  - _characterId: 9
+    _emotionSprite: N
+    _time: 540
+    _text:
+    - F19
+    - "I\u2019ll soon go to the <Lieu> train station</>, wait for me."
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 545
+    _text:
+    - F19
+    - "Why? Should I be elsewhere? Don\u2019t you have something to say to me?"
+  - _characterId: 10
+    _emotionSprite: C
+    _time: 545
+    _text:
+    - F19
+    - "I\u2019m sorry Milton but I will not go with you."
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 550
+    _text:
+    - F19
+    - "Wasn\u2019t officer Merrick supposed to be meeting you?"
+  - _characterId: 4
+    _emotionSprite: J
+    _time: 550
+    _text:
+    - F19
+    - Marvin. I have what you asked.
+  - _characterId: 6
+    _emotionSprite: J
+    _time: 550
+    _text:
+    - F19
+    - "It\u2019s okay, I have all the information noted!"
+  - _characterId: 9
+    _emotionSprite: C
+    _time: 550
+    _text:
+    - F19
+    - What? Why?
+  - _characterId: 1
+    _emotionSprite: N
+    _time: 555
+    _text:
+    - F19
+    - "So you were in contact with Merrick\u2026 I will be at the house at 7 and
+      a half, do not move."
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 555
+    _text:
+    - F19
+    - Perfect, does the Lady told you how to do it?
+  - _characterId: 7
+    _emotionSprite: C
+    _time: 555
+    _text:
+    - F19
+    - "Don\u2019t tell me you called him back\u2026"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 555
+    _text:
+    - F19
+    - "I have a meeting with a Gold River. We\u2019ll meet in one hour at the <Lieu>
+      North Warehouse</>. The one for <Metier> woodworker</>."
+  - _characterId: 2
+    _emotionSprite: S
+    _time: 600
+    _text:
+    - F19
+    - "Wait! Please! Oh god\u2026"
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 600
+    _text:
+    - F19
+    - "Yes, don\u2019t worry\u2026 I thought of it and it is time I stop working
+      for your group."
+  - _characterId: 7
+    _emotionSprite: A
+    _time: 600
+    _text:
+    - F19
+    - "You are being unprofessional! If we lose this business it\u2019s the end of
+      the perfumery!"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 600
+    _text:
+    - F19
+    - "I just cannot leave Portland. I don\u2019t own much already so I will not
+      go towards an unknown place where I will not have anything left."
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 605
+    _text:
+    - F19
+    - I will not go see The Dukes of course and still be a customer. I have my own
+      honor.
+  - _characterId: 6
+    _emotionSprite: C
+    _time: 605
+    _text:
+    - F19
+    - "Sorry love, it won\u2019t happen again! Now that I know the real number\u2026"
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 605
+    _text:
+    - F19
+    - Not for you.
+  - _characterId: 5
+    _emotionSprite: A
+    _time: 610
+    _text:
+    - F19
+    - Just what I wanted! Now, the list please!
+  - _characterId: 7
+    _emotionSprite: N
+    _time: 610
+    _text:
+    - F19
+    - "Well don\u2019t lose time calling me and bring me a coffee please."
+  - _characterId: 9
+    _emotionSprite: C
+    _time: 610
+    _text:
+    - F19
+    - "\u2026 Can\u2019t you come see me off?"
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 615
+    _text:
+    - F19
+    - "Okay. <Date> Monday</>, 5pm you\u2019ll have a meeting with a dentist in <Lieu>
+      Lowndale Square</>."
+  - _characterId: 6
+    _emotionSprite: J
+    _time: 615
+    _text:
+    - F19
+    - Sure, going to pass by the restaurant at <Lieur> NorthWest Place</>. See you
+      soon!
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 615
+    _text:
+    - F19
+    - "I\u2019m sorry but no."
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 620
+    _text:
+    - F19
+    - <Date> Tuesday</>, <Heure> 11.30am </> <Metier> garbage collectors </> will
+      come collect your stuff at <Lieu> SW Oak Street</>.
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 620
+    _text:
+    - F19
+    - "I will not tell your former friend\u2019s project to the Gold Rivers tomorrow,
+      I do not want any retaliations. But this is farewell."
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 625
+    _text:
+    - F19
+    - Finally, <Date> Friday </> your usual milkman is sick so changes of plan.
+  - _characterId: 9
+    _emotionSprite: C
+    _time: 625
+    _text:
+    - F19
+    - "\u2026 Farewell dear Rose, you were my only true friend here. I hope we\u2019ll
+      meet again."
+  - _characterId: 4
+    _emotionSprite: N
+    _time: 630
+    _text:
+    - F19
+    - Go to the one at <Lieu> 606 SE Madison Street</>, it opens at <Heure> 6.47pm</>.
+  - _characterId: 10
+    _emotionSprite: N
+    _time: 630
+    _text:
+    - F19
+    - I hope not. For both of us. Farewell Milton.
+  - _characterId: 5
+    _emotionSprite: N
+    _time: 635
+    _text:
+    - F19
+    - Thank you, pleasure doing business with you for the last time.

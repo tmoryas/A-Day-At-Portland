@@ -1725,13 +1725,13 @@ MonoBehaviour:
   bannerDico:
     _serializedList:
     - Key: 0
-      Value: {fileID: 1258833301}
+      Value: {fileID: 0}
     - Key: 1
-      Value: {fileID: 581442312}
+      Value: {fileID: 0}
     - Key: 2
-      Value: {fileID: 1092585161}
+      Value: {fileID: 0}
     - Key: 3
-      Value: {fileID: 1258833301}
+      Value: {fileID: 0}
 --- !u!1 &868378832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3695,7 +3695,7 @@ MonoBehaviour:
       Value: 3
     - Key: 10
       Value: 3
-  colorEteint: {r: 0, g: 0, b: 0, a: 0}
+  colorEteint: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
 --- !u!1 &1628986166
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,7 +4304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d862e2e83222ad47b49212a5fbcb844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  database: {fileID: 11400000, guid: d3d998fe03163bd4da3e9bd8562484e9, type: 2}
+  database: {fileID: 11400000, guid: e892e864b1b47f9489221ef264ca3be0, type: 2}
   dialogueManager: {fileID: 1621623532}
   inputManager: {fileID: 1268473752}
   baliseGetter: {fileID: 854840149}

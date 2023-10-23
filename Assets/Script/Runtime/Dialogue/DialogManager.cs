@@ -57,7 +57,7 @@ public class DialogManager : MonoBehaviour
 
     public void ForwardDialogData(int time)
     {
-        _dialogDB.DialogQueue = new Queue<DialogData>(_dialogDB.DialogQueue.Where(dialog => dialog.Time >= time).OrderBy(d => d.Time).ToList());
+        _dialogDB.DialogQueue = new Queue<DialogData>(_dialogDB.DialogQueue.Where(dialog => dialog.StartTime >= time).OrderBy(d => d.StartTime).ToList());
         for (int i = 1; i < 11; i++)
             _characterSprite[i].LightEffect.sprite = _spriteEteint.LightEffect;
     }
@@ -72,7 +72,7 @@ public class DialogManager : MonoBehaviour
         int max = _dialogDB.DialogQueue.Count;
         for (int i = 0; i < max; i++)
         {
-            if (_dialogDB.DialogQueue.First().Time == time)
+            if (_dialogDB.DialogQueue.First().StartTime == time)
             {
                 DialogData data = _dialogDB.DialogQueue.Dequeue();
                 _actualDialog.Add(data.CharacterId, data);

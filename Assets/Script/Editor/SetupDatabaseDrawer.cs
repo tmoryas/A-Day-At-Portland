@@ -34,27 +34,27 @@ public class SetupDatabaseDrawer : Editor
             if (GUILayout.Button("New Dialogue Databse"))
             {
                 DialogDatabase asset = ScriptableObject.CreateInstance<DialogDatabase>();
-                string name = UnityEditor.AssetDatabase.GenerateUniqueAssetPath("Assets/Scriptable/DialogueDatabase/" + System.DateTime.Now.ToString("dd-MM") + "_Database.asset");
+                string name = UnityEditor.AssetDatabase.GenerateUniqueAssetPath("Assets/Scriptable/DialogueDatabase/" + System.DateTime.Now.ToString("dd-MM_hh-mm") + "_Database.asset");
 
                 for (int i = 1; i < myObject.JsonFile["values"].Count; i++)
                 {
                     string key = myObject.JsonFile["values"][i][0];
                     string[] splitKey = key.Split('_');
 
-                    if (splitKey[0] == "" || splitKey[1] == "" || splitKey[2] == "")
+                    if (splitKey[0] == "" || splitKey[1] == "" || splitKey[2] == "" || splitKey[3] == "" || splitKey[4] == "")
                         continue;
 
                     List<string> allDialogueTranslation = new List<string>();
 
-                    for (int j = 4; j < myObject.JsonFile["values"][0].Count; j++)
+                    for (int j = 6; j < myObject.JsonFile["values"][0].Count; j++)
                     {
                         allDialogueTranslation.Add(myObject.JsonFile["values"][i][j]);
                     }
 
-                    asset.DialogueDataList.Add(new DialogData(Int32.Parse(splitKey[0]), splitKey[1], Int32.Parse(splitKey[2]), allDialogueTranslation));   
+                    asset.DialogueDataList.Add(new DialogData(Int32.Parse(splitKey[0]), splitKey[1], Int32.Parse(splitKey[2]), Int32.Parse(splitKey[3]), Int32.Parse(splitKey[4]), allDialogueTranslation));   
                 }
 
-                asset.DialogueDataList = asset.DialogueDataList.OrderBy(d => d.Time).ToList();
+                asset.DialogueDataList = asset.DialogueDataList.OrderBy(d => d.StartTime).ToList();
                 AssetDatabase.CreateAsset(asset, name);
                 EditorUtility.SetDirty(asset);
                 AssetDatabase.SaveAssets();

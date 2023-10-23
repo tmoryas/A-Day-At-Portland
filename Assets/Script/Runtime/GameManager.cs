@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
         _dialogueManager.GetNextDialog(_hourSlot + _minSlot);
 
-        _maxWatchTime = RealSecondCalcul(_dialogDB.DialogueDataList[_dialogDB.DialogueDataList.Count - 1].Time);
+        _maxWatchTime = RealSecondCalcul(_dialogDB.DialogueDataList[_dialogDB.DialogueDataList.Count - 1].StartTime);
 
         _inputManager.OnTurnDoneEvent += ChangeTime;
     }
